@@ -154,9 +154,9 @@ function Index() {
       <section className="border-y border-border/70 bg-card/50">
         <div className="mx-auto max-w-6xl grid grid-cols-3 divide-x divide-border/70">
           {[
-            { i: "👥", n: "50+", l: "Danışan" },
-            { i: "🏆", n: "5+", l: "Yıl Deneyim" },
-            { i: "📍", n: "Online & Yüz Yüze", l: "Hizmet" },
+            { i: "🏆", n: "+5", l: "Yıl Deneyim", d: "Profesyonel koçluk" },
+            { i: "👥", n: "500+", l: "Danışan", d: "Başarı hikayeleri" },
+            { i: "⭐", n: "4.9/5", l: "Memnuniyet", d: "%97 memnuniyet" },
           ].map((s) => (
             <div key={s.l} className="px-3 py-6 md:py-8 text-center">
               <div className="text-2xl md:text-3xl mb-1">{s.i}</div>
@@ -164,8 +164,21 @@ function Index() {
                 {s.n}
               </div>
               <div className="eyebrow text-muted-foreground mt-2">{s.l}</div>
+              <div className="text-xs text-muted-foreground/80 mt-1 hidden md:block">{s.d}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* TRANSFORMATIONS TEASER */}
+      <section className="px-5 md:px-8 pt-10">
+        <div className="mx-auto max-w-6xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-card border border-border p-6">
+          <div>
+            <div className="eyebrow text-gold mb-1">Önce / Sonra</div>
+            <h3 className="font-display text-2xl md:text-3xl uppercase text-white">Danışan Dönüşümleri</h3>
+            <p className="text-sm text-muted-foreground mt-1">Gerçek sonuçlar, gerçek danışanlar.</p>
+          </div>
+          <a href="/donusumler" className="btn-outline-gold whitespace-nowrap">Galeriyi Gör →</a>
         </div>
       </section>
 
