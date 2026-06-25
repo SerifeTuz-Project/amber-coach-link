@@ -107,34 +107,18 @@ function Transformations() {
                 <div className="eyebrow text-gold-bright">{it.result}</div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 md:gap-5">
-                <div className="relative">
-                  {it.before ? (
-                    <img
-                      src={it.before}
-                      alt={`${it.name} önce fotoğrafı`}
-                      className="aspect-[3/4] w-full object-cover border border-border"
-                    />
-                  ) : (
-                    <Placeholder label="ÖNCE" />
-                  )}
-                  <div className="absolute top-3 left-3 bg-background/80 backdrop-blur px-3 py-1 eyebrow text-white border border-border">
-                    Önce
-                  </div>
+              <div className="relative">
+                <img
+                  src={it.image}
+                  alt={`${it.name} önce ve sonra fotoğrafı`}
+                  loading="lazy"
+                  className="w-full object-contain border border-border bg-black"
+                />
+                <div className="absolute top-3 left-3 bg-background/80 backdrop-blur px-3 py-1 eyebrow text-white border border-border">
+                  Önce
                 </div>
-                <div className="relative">
-                  {it.after ? (
-                    <img
-                      src={it.after}
-                      alt={`${it.name} sonra fotoğrafı`}
-                      className="aspect-[3/4] w-full object-cover border border-border"
-                    />
-                  ) : (
-                    <Placeholder label="SONRA" />
-                  )}
-                  <div className="absolute top-3 left-3 bg-gold text-background px-3 py-1 eyebrow">
-                    Sonra
-                  </div>
+                <div className="absolute top-3 right-3 bg-gold text-background px-3 py-1 eyebrow">
+                  Sonra
                 </div>
               </div>
 
