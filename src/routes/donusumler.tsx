@@ -1,4 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
+import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
+import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
+import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -19,6 +23,7 @@ export const Route = createFileRoute("/donusumler")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/donusumler" },
+      { property: "og:image", content: transform3.url },
     ],
     links: [{ rel: "canonical", href: "/donusumler" }],
   }),
@@ -29,32 +34,40 @@ type Item = {
   name: string;
   duration: string;
   result: string;
-  before?: string;
-  after?: string;
+  image: string;
   note?: string;
 };
 
-// Replace src values with real photo URLs as they become available.
 const items: Item[] = [
-  { name: "Danışan #1", duration: "12 hafta", result: "-10 kg yağ kaybı" },
-  { name: "Danışan #2", duration: "16 hafta", result: "+6 kg kas kazanımı" },
-  { name: "Danışan #3", duration: "20 hafta", result: "Form & duruş dönüşümü" },
-  { name: "Danışan #4", duration: "8 hafta", result: "-6 kg & enerji artışı" },
+  {
+    name: "Erkek Danışan",
+    duration: "16 hafta",
+    result: "Yağ kaybı & kas tanımı",
+    image: transform1.url,
+    note: "Disiplinli beslenme ve düzenli antrenman ile net bir form değişimi.",
+  },
+  {
+    name: "Erkek Danışan",
+    duration: "20 hafta",
+    result: "Komple form dönüşümü",
+    image: transform2.url,
+    note: "Postür düzeltme ve kas kazanımı odaklı program.",
+  },
+  {
+    name: "Erkek Danışan",
+    duration: "24 hafta",
+    result: "Kas kazanımı & definasyon",
+    image: transform3.url,
+    note: "Hipertrofi odaklı program ile belirgin kas gelişimi.",
+  },
+  {
+    name: "Kadın Danışan",
+    duration: "14 hafta",
+    result: "Sıkılaşma & form",
+    image: transform4.url,
+    note: "Kuvvet antrenmanı ile sıkı ve sağlıklı bir görünüm.",
+  },
 ];
-
-function Placeholder({ label }: { label: string }) {
-  return (
-    <div className="relative aspect-[3/4] w-full bg-[#141414] border border-border flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 opacity-30" style={{
-        background: "repeating-linear-gradient(45deg, transparent 0 12px, rgba(212,160,23,0.08) 12px 13px)",
-      }} />
-      <div className="text-center px-4 relative">
-        <div className="eyebrow text-gold mb-2">{label}</div>
-        <div className="text-xs text-muted-foreground">Fotoğraf yakında</div>
-      </div>
-    </div>
-  );
-}
 
 function Transformations() {
   return (
@@ -94,34 +107,18 @@ function Transformations() {
                 <div className="eyebrow text-gold-bright">{it.result}</div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 md:gap-5">
-                <div className="relative">
-                  {it.before ? (
-                    <img
-                      src={it.before}
-                      alt={`${it.name} önce fotoğrafı`}
-                      className="aspect-[3/4] w-full object-cover border border-border"
-                    />
-                  ) : (
-                    <Placeholder label="ÖNCE" />
-                  )}
-                  <div className="absolute top-3 left-3 bg-background/80 backdrop-blur px-3 py-1 eyebrow text-white border border-border">
-                    Önce
-                  </div>
+              <div className="relative">
+                <img
+                  src={it.image}
+                  alt={`${it.name} önce ve sonra fotoğrafı`}
+                  loading="lazy"
+                  className="w-full object-contain border border-border bg-black"
+                />
+                <div className="absolute top-3 left-3 bg-background/80 backdrop-blur px-3 py-1 eyebrow text-white border border-border">
+                  Önce
                 </div>
-                <div className="relative">
-                  {it.after ? (
-                    <img
-                      src={it.after}
-                      alt={`${it.name} sonra fotoğrafı`}
-                      className="aspect-[3/4] w-full object-cover border border-border"
-                    />
-                  ) : (
-                    <Placeholder label="SONRA" />
-                  )}
-                  <div className="absolute top-3 left-3 bg-gold text-background px-3 py-1 eyebrow">
-                    Sonra
-                  </div>
+                <div className="absolute top-3 right-3 bg-gold text-background px-3 py-1 eyebrow">
+                  Sonra
                 </div>
               </div>
 
