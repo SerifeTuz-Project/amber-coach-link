@@ -1,4 +1,3 @@
 {
-  "buildCommand": "NITRO_PRESET=vercel bun run build",
-  "framework": null
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
