@@ -107,12 +107,12 @@ function Transformations() {
                 <div className="eyebrow text-gold-bright">{it.result}</div>
               </div>
 
-              <div className="relative">
+              <div className="relative overflow-hidden border border-border">
                 <img
                   src={it.image}
                   alt={`${it.name} önce ve sonra fotoğrafı`}
                   loading="lazy"
-                  className="w-full object-contain border border-border bg-black"
+                  className="w-full h-64 md:h-96 object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-background/80 backdrop-blur px-3 py-1 eyebrow text-white border border-border">
                   Önce
