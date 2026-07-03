@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-gym.jpg";
+
 import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 
 const WA_URL =
