@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 import logoAsset from "@/assets/erkan-logo.svg.asset.json";
+import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
+import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
+import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
+import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
