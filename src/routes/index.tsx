@@ -156,27 +156,27 @@ function Index() {
         {/* Headline block */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24">
           <div className="max-w-2xl">
-            <h1 className="font-display uppercase leading-[0.85] fade-up">
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Güçlü Bir</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Beden</span>
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">Güçlü Bir</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Zihin</span>
+            <h1 className="font-display leading-[0.85] fade-up">
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">GÜÇLÜ BİR</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">BEDEN</span>
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">GÜÇLÜ BİR</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">ZİHİN</span>
             </h1>
 
             <div className="mt-6 md:mt-8 fade-up">
-              <div className="font-display text-2xl md:text-3xl uppercase text-white tracking-wide">
-                Hedefine Birlikte
+              <div className="font-display text-2xl md:text-3xl text-white tracking-wide">
+                HEDEFİNE BİRLİKTE
               </div>
-              <div className="font-display text-2xl md:text-3xl uppercase text-gold tracking-wide">
-                Ulaşalım!
+              <div className="font-display text-2xl md:text-3xl text-gold tracking-wide">
+                ULAŞALIM!
               </div>
             </div>
 
             <div className="mt-7 md:mt-9 fade-up">
               <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
-                🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
+                🎁 ÜCRETSİZ 30 DAKİKALIK DENEME DERSİ AL
               </a>
-              <p className="mt-3 text-sm text-white/70">Hemen yaz, bugün başla.</p>
+              <p className="mt-5 text-sm text-white/70">Hemen yaz, bugün başla.</p>
             </div>
           </div>
         </div>
