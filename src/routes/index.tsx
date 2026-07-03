@@ -146,7 +146,7 @@ function Index() {
             ))}
           </ul>
           <a
-            href={WA_URL}
+href={WA_SIMPLE}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-4 lg:px-6 py-2 lg:py-2.5 text-sm hover:bg-gold-bright transition-colors shrink-0 ml-2 md:ml-6 lg:ml-10 shadow-sm whitespace-nowrap"
