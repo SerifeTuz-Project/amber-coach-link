@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 import logoAsset from "@/assets/erkan-logo.svg.asset.json";
+import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
+import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
+import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
+import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -108,8 +112,49 @@ function Index() {
     "Sorularını cevaplarız",
   ];
 
+  const transformations = [
+    { name: "Mert A.", before: transform1.url, after: transform2.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
+    { name: "Selin K.", before: transform3.url, after: transform4.url, result: "16 haftada sıkı form", note: "Kuvvet antrenmanı ile sağlıklı bir görünüm." },
+    { name: "Kaan B.", before: transform2.url, after: transform3.url, result: "20 haftada +6kg kas", note: "Hipertrofi odaklı program ile kas kazanımı." },
+  ];
+
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <div className="mx-auto max-w-6xl px-5 md:px-8 h-16 md:h-20 flex items-center justify-between gap-4">
+          <a href="/" className="flex items-center gap-3 shrink-0">
+            <img src={logoAsset.url} alt="Erkan Oduncu" className="h-9 w-auto md:h-10" />
+            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white hidden sm:inline">
+              Erkan <span className="text-gold">Oduncu</span>
+            </span>
+          </a>
+          <ul className="hidden lg:flex items-center gap-7 text-sm text-white/85">
+            {[
+              { l: "Anasayfa", h: "/" },
+              { l: "Hakkımızda", h: "#hakkimizda" },
+              { l: "Danışmanlık Paketleri", h: "#hizmetler" },
+              { l: "Sık Sorulan Sorular", h: "#sss" },
+              { l: "İletişim", h: "#iletisim" },
+            ].map((item) => (
+              <li key={item.l}>
+                <a href={item.h} className="hover:text-gold transition-colors">
+                  {item.l}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-4 md:px-5 py-2 md:py-2.5 text-sm hover:bg-gold-bright transition-colors shrink-0"
+          >
+            İletişime Geç
+          </a>
+        </div>
+      </nav>
+
       {/* HERO */}
       <section className="relative min-h-[100svh] overflow-hidden">
         {/* Background portrait — full bleed on the right, blends into dark on the left */}
@@ -222,7 +267,7 @@ function Index() {
       </section>
 
       {/* FREE TRIAL */}
-      <Section id="deneme" eyebrow="Sana Özel Teklif">
+      <Section id="hakkimizda" eyebrow="Sana Özel Teklif">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
           <div>
             <h2 className="font-display text-4xl md:text-6xl leading-[0.95] uppercase">
@@ -252,7 +297,7 @@ function Index() {
       <div className="hairline mx-auto max-w-6xl" />
 
       {/* SERVICES */}
-      <Section eyebrow="Ne Sunuyorum" title="Hizmetlerim">
+      <Section id="hizmetler" eyebrow="Ne Sunuyorum" title="Hizmetlerim">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((s) => (
             <div
@@ -275,6 +320,38 @@ function Index() {
         </div>
       </Section>
 
+      {/* DEĞİŞİMLER */}
+      <Section id="degisimler" eyebrow="Rakamlarla değil, sonuçlarla konuşuyoruz" title="Değişimler">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+          {transformations.map((t) => (
+            <article key={t.name} className="bg-card border border-border p-4 flex flex-col">
+              <div className="grid grid-cols-2 gap-2">
+                <figure className="relative overflow-hidden border border-border">
+                  <img src={t.before} alt={`${t.name} öncesi`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                  <figcaption className="absolute top-2 left-2 bg-background/80 backdrop-blur px-2 py-0.5 eyebrow text-white border border-border text-[10px]">
+                    Öncesi
+                  </figcaption>
+                </figure>
+                <figure className="relative overflow-hidden border border-border">
+                  <img src={t.after} alt={`${t.name} sonrası`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                  <figcaption className="absolute top-2 right-2 bg-gold text-background px-2 py-0.5 eyebrow text-[10px]">
+                    Sonrası
+                  </figcaption>
+                </figure>
+              </div>
+              <div className="mt-4 flex items-center justify-between">
+                <h3 className="font-display text-lg uppercase text-white">{t.name}</h3>
+                <span className="eyebrow text-gold-bright">{t.result}</span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-2">{t.note}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <a href="/donusumler" className="btn-outline-gold">Tüm Dönüşümleri Gör →</a>
+        </div>
+      </Section>
+
       {/* HOW IT WORKS */}
       <Section eyebrow="Süreç" title="Nasıl Çalışır?" className="bg-card/30">
         <div className="grid md:grid-cols-3 gap-6">
@@ -293,7 +370,7 @@ function Index() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <Section eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
+      <Section id="sss" eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
         <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t) => (
             <figure key={t.name} className="bg-card border border-border p-6 flex flex-col">
@@ -307,6 +384,7 @@ function Index() {
 
       {/* FINAL CTA */}
       <section
+        id="iletisim"
         className="section-pad px-5 md:px-8 text-center relative overflow-hidden"
         style={{
           background:
