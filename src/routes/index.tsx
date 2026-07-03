@@ -261,7 +261,7 @@ function Index() {
       </section>
 
       {/* FREE TRIAL */}
-      <Section id="deneme" eyebrow="Sana Özel Teklif">
+      <Section id="hakkimizda" eyebrow="Sana Özel Teklif">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
           <div>
             <h2 className="font-display text-4xl md:text-6xl leading-[0.95] uppercase">
