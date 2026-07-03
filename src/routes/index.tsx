@@ -314,6 +314,38 @@ function Index() {
         </div>
       </Section>
 
+      {/* DEĞİŞİMLER */}
+      <Section id="degisimler" eyebrow="Rakamlarla değil, sonuçlarla konuşuyoruz" title="Değişimler">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+          {transformations.map((t) => (
+            <article key={t.name} className="bg-card border border-border p-4 flex flex-col">
+              <div className="grid grid-cols-2 gap-2">
+                <figure className="relative overflow-hidden border border-border">
+                  <img src={t.before} alt={`${t.name} öncesi`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                  <figcaption className="absolute top-2 left-2 bg-background/80 backdrop-blur px-2 py-0.5 eyebrow text-white border border-border text-[10px]">
+                    Öncesi
+                  </figcaption>
+                </figure>
+                <figure className="relative overflow-hidden border border-border">
+                  <img src={t.after} alt={`${t.name} sonrası`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
+                  <figcaption className="absolute top-2 right-2 bg-gold text-background px-2 py-0.5 eyebrow text-[10px]">
+                    Sonrası
+                  </figcaption>
+                </figure>
+              </div>
+              <div className="mt-4 flex items-center justify-between">
+                <h3 className="font-display text-lg uppercase text-white">{t.name}</h3>
+                <span className="eyebrow text-gold-bright">{t.result}</span>
+              </div>
+              <p className="text-sm text-muted-foreground mt-2">{t.note}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <a href="/donusumler" className="btn-outline-gold">Tüm Dönüşümleri Gör →</a>
+        </div>
+      </Section>
+
       {/* HOW IT WORKS */}
       <Section eyebrow="Süreç" title="Nasıl Çalışır?" className="bg-card/30">
         <div className="grid md:grid-cols-3 gap-6">
