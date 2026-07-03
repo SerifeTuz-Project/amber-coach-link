@@ -7,7 +7,7 @@ import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
 import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
 import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
-const WA_SIMPLE = "https://wa.me/905061511150";
+
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
 const IG_URL = "https://instagram.com/erkanodnc";
@@ -124,13 +124,12 @@ function Index() {
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            <img src={logoAsset.url} alt="Erkan Oduncu" className="h-9 w-auto md:h-10" />
-            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-gray-900 hidden sm:inline">
+          <a href="/" className="flex items-center shrink-0">
+            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-gray-900">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
           </a>
-          <ul className="hidden md:flex items-center gap-4 lg:gap-8 text-xs lg:text-sm text-gray-600 tracking-wide">
+          <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-gray-600 tracking-wide">
             {[
               { l: "Anasayfa", h: "/" },
               { l: "Hakkımızda", h: "#hakkimizda" },
@@ -145,14 +144,6 @@ function Index() {
               </li>
             ))}
           </ul>
-          <a
-href={WA_SIMPLE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-4 lg:px-6 py-2 lg:py-2.5 text-sm hover:bg-gold-bright transition-colors shrink-0 ml-2 md:ml-6 lg:ml-10 shadow-sm whitespace-nowrap"
-          >
-            İletişime Geç
-          </a>
         </div>
       </nav>
 
