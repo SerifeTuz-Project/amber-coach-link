@@ -124,12 +124,7 @@ function Index() {
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            <img
-              src={logoAsset.url}
-              alt="Erkan Oduncu Logo"
-              className="h-8 w-auto md:h-10"
-            />
+          <a href="/" className="flex items-center shrink-0">
             <span className="font-display text-lg md:text-xl uppercase tracking-wider text-gray-900">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
