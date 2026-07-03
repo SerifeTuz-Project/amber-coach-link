@@ -7,6 +7,7 @@ import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
 import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
 import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
+const WA_SIMPLE = "https://wa.me/905061511150";
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
 const IG_URL = "https://instagram.com/erkanodnc";
@@ -145,7 +146,7 @@ function Index() {
             ))}
           </ul>
           <a
-            href={WA_URL}
+href={WA_SIMPLE}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-4 lg:px-6 py-2 lg:py-2.5 text-sm hover:bg-gold-bright transition-colors shrink-0 ml-2 md:ml-6 lg:ml-10 shadow-sm whitespace-nowrap"
