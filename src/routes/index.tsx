@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-gym.jpg";
+
 import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 
 const WA_URL =
@@ -110,83 +110,86 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-center overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Karanlık lüks spor salonunda ağırlık çalışan sporcu silueti"
-          width={1080}
-          height={1920}
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-60 md:opacity-100"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.55) 40%, #0A0A0A 98%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 75% 40%, rgba(212,160,23,0.22), transparent 55%)",
-          }}
-        />
+      <section className="relative min-h-[100svh] overflow-hidden">
+        {/* Background portrait — full bleed on the right, blends into dark on the left */}
+        <div className="absolute inset-0">
+          <img
+            src={portraitAsset.url}
+            alt="Personal Trainer Erkan Oduncu spor salonunda portre"
+            className="absolute inset-y-0 right-0 h-full w-full md:w-[65%] object-cover object-[70%_center]"
+          />
+          <div
+            className="absolute inset-0 hidden md:block"
+            style={{
+              background:
+                "linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 30%, rgba(10,10,10,0.85) 46%, rgba(10,10,10,0.3) 68%, rgba(10,10,10,0.05) 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,0.9) 75%, #0A0A0A 100%)",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at 78% 45%, rgba(212,160,23,0.20), transparent 55%)",
+            }}
+          />
+        </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-24 pb-12 md:pt-28 md:pb-24">
-          <div className="grid md:grid-cols-[1.15fr_1fr] gap-8 md:gap-10 items-center">
-            <div>
-              <div className="eyebrow text-gold mb-4 md:mb-5 fade-up">Personal Trainer · İstanbul</div>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] uppercase fade-up">
-                <span className="block text-white">Güçlü Bir Beden</span>
-                <span className="block text-gold">Güçlü Bir Zihin</span>
-              </h1>
-              <p className="mt-5 max-w-xl text-base md:text-xl text-white/85 fade-up">
-                Hedefine birlikte ulaşalım.
-              </p>
-              <div className="mt-7 fade-up">
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
-                  🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
-                </a>
-                <p className="mt-3 text-sm text-muted-foreground">Hemen yaz, bugün başla.</p>
-              </div>
+        {/* Brand mark top-left */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-6 md:pt-8">
+          <div className="flex items-center gap-3">
+            <div className="grid h-10 w-10 md:h-11 md:w-11 shrink-0 place-items-center border border-gold/60 text-gold">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true">
+                <path d="M12 2a4 4 0 0 0-3.87 5H6a2 2 0 0 0-2 2c0 4.5 3 8.5 8 11 5-2.5 8-6.5 8-11a2 2 0 0 0-2-2h-2.13A4 4 0 0 0 12 2Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" />
+              </svg>
             </div>
-
-            {/* PORTRAIT */}
-            <div className="relative fade-up order-first md:order-last mx-auto md:mx-0 w-full max-w-[280px] sm:max-w-[340px] md:max-w-none">
-              <div
-                className="absolute -inset-3 md:-inset-5 opacity-70 blur-2xl"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(212,160,23,0.45), transparent 70%)",
-                }}
-                aria-hidden="true"
-              />
-              <div className="relative aspect-[4/5] overflow-hidden border border-gold/30 shadow-[0_20px_60px_-15px_rgba(212,160,23,0.4)]">
-                <img
-                  src={portraitAsset.url}
-                  alt="Personal Trainer Erkan Oduncu spor salonunda portre"
-                  className="h-full w-full object-cover object-center"
-                />
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "linear-gradient(180deg, transparent 55%, rgba(10,10,10,0.6) 100%)",
-                  }}
-                />
-                <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-                  <div>
-                    <div className="eyebrow text-gold">Erkan Oduncu</div>
-                    <div className="text-xs text-white/80 mt-0.5">Personal Trainer</div>
-                  </div>
-                  <div className="h-px flex-1 ml-3 mb-2 bg-gold/40" />
-                </div>
-              </div>
+            <div className="leading-tight">
+              <div className="text-[10px] md:text-xs tracking-[0.25em] text-white/70 uppercase">Fitness Coach</div>
+              <div className="font-display text-lg md:text-xl uppercase text-gold tracking-wider">Erkan Oduncu</div>
             </div>
           </div>
         </div>
+
+        {/* Headline block */}
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24">
+          <div className="max-w-2xl">
+            <h1 className="font-display uppercase leading-[0.85] fade-up">
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Güçlü Bir</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Beden</span>
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">Güçlü Bir</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Zihin</span>
+            </h1>
+
+            <div className="mt-6 md:mt-8 fade-up">
+              <div className="font-display text-2xl md:text-3xl uppercase text-white tracking-wide">
+                Hedefine Birlikte
+              </div>
+              <div className="font-display text-2xl md:text-3xl uppercase text-gold tracking-wide">
+                Ulaşalım!
+              </div>
+            </div>
+
+            <div className="mt-7 md:mt-9 fade-up">
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
+                🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
+              </a>
+              <p className="mt-3 text-sm text-white/70">Hemen yaz, bugün başla.</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="absolute bottom-0 inset-x-0 h-px"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(212,160,23,0.6), transparent)" }}
+        />
       </section>
+
 
 
       {/* SOCIAL PROOF BAR */}
