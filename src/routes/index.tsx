@@ -143,17 +143,13 @@ function Index() {
         </div>
 
         {/* Brand mark top-left */}
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-6 md:pt-8">
-          <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 md:h-11 md:w-11 shrink-0 place-items-center border border-gold/60 text-gold">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true">
-                <path d="M12 2a4 4 0 0 0-3.87 5H6a2 2 0 0 0-2 2c0 4.5 3 8.5 8 11 5-2.5 8-6.5 8-11a2 2 0 0 0-2-2h-2.13A4 4 0 0 0 12 2Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" />
-              </svg>
-            </div>
-            <div className="leading-tight">
-              <div className="text-[10px] md:text-xs tracking-[0.25em] text-white/70 uppercase">Fitness Coach</div>
-              <div className="font-display text-lg md:text-xl uppercase text-gold tracking-wider">Erkan Oduncu</div>
-            </div>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-10 md:pt-12">
+          <div className="flex items-center gap-4">
+            <img
+              src={logoAsset.url}
+              alt="Erkan Oduncu Logo"
+              className="h-14 w-auto md:h-16"
+            />
           </div>
         </div>
 
