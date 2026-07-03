@@ -384,6 +384,7 @@ function Index() {
 
       {/* FINAL CTA */}
       <section
+        id="iletisim"
         className="section-pad px-5 md:px-8 text-center relative overflow-hidden"
         style={{
           background:
