@@ -370,7 +370,7 @@ function Index() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <Section eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
+      <Section id="sss" eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
         <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t) => (
             <figure key={t.name} className="bg-card border border-border p-6 flex flex-col">
