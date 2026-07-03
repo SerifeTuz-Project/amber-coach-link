@@ -291,7 +291,7 @@ function Index() {
       <div className="hairline mx-auto max-w-6xl" />
 
       {/* SERVICES */}
-      <Section eyebrow="Ne Sunuyorum" title="Hizmetlerim">
+      <Section id="hizmetler" eyebrow="Ne Sunuyorum" title="Hizmetlerim">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((s) => (
             <div
