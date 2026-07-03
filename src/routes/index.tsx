@@ -129,7 +129,7 @@ function Index() {
               Erkan <span className="text-gold">Oduncu</span>
             </span>
           </a>
-          <ul className="hidden lg:flex items-center gap-7 text-sm text-white/85">
+          <ul className="hidden sm:flex items-center gap-3 md:gap-5 lg:gap-7 text-xs md:text-sm text-white/85">
             {[
               { l: "Anasayfa", h: "/" },
               { l: "Hakkımızda", h: "#hakkimizda" },
