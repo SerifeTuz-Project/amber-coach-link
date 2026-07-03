@@ -112,6 +112,12 @@ function Index() {
     "Sorularını cevaplarız",
   ];
 
+  const transformations = [
+    { name: "Mert A.", before: transform1.url, after: transform2.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
+    { name: "Selin K.", before: transform3.url, after: transform4.url, result: "16 haftada sıkı form", note: "Kuvvet antrenmanı ile sağlıklı bir görünüm." },
+    { name: "Kaan B.", before: transform2.url, after: transform3.url, result: "20 haftada +6kg kas", note: "Hipertrofi odaklı program ile kas kazanımı." },
+  ];
+
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
