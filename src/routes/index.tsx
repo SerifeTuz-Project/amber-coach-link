@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
+import logoAsset from "@/assets/erkan-logo.svg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -142,44 +143,40 @@ function Index() {
         </div>
 
         {/* Brand mark top-left */}
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-6 md:pt-8">
-          <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 md:h-11 md:w-11 shrink-0 place-items-center border border-gold/60 text-gold">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true">
-                <path d="M12 2a4 4 0 0 0-3.87 5H6a2 2 0 0 0-2 2c0 4.5 3 8.5 8 11 5-2.5 8-6.5 8-11a2 2 0 0 0-2-2h-2.13A4 4 0 0 0 12 2Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z" />
-              </svg>
-            </div>
-            <div className="leading-tight">
-              <div className="text-[10px] md:text-xs tracking-[0.25em] text-white/70 uppercase">Fitness Coach</div>
-              <div className="font-display text-lg md:text-xl uppercase text-gold tracking-wider">Erkan Oduncu</div>
-            </div>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-10 md:pt-12">
+          <div className="flex items-center gap-4">
+            <img
+              src={logoAsset.url}
+              alt="Erkan Oduncu Logo"
+              className="h-14 w-auto md:h-16"
+            />
           </div>
         </div>
 
         {/* Headline block */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24">
           <div className="max-w-2xl">
-            <h1 className="font-display uppercase leading-[0.85] fade-up">
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Güçlü Bir</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Beden</span>
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">Güçlü Bir</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">Zihin</span>
+            <h1 className="font-display leading-[0.85] fade-up">
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">GÜÇLÜ BİR</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">BEDEN</span>
+              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">GÜÇLÜ BİR</span>
+              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">ZİHİN</span>
             </h1>
 
             <div className="mt-6 md:mt-8 fade-up">
-              <div className="font-display text-2xl md:text-3xl uppercase text-white tracking-wide">
-                Hedefine Birlikte
+              <div className="font-display text-2xl md:text-3xl text-white tracking-wide">
+                HEDEFİNE BİRLİKTE
               </div>
-              <div className="font-display text-2xl md:text-3xl uppercase text-gold tracking-wide">
-                Ulaşalım!
+              <div className="font-display text-2xl md:text-3xl text-gold tracking-wide">
+                ULAŞALIM!
               </div>
             </div>
 
             <div className="mt-7 md:mt-9 fade-up">
               <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
-                🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
+                🎁 ÜCRETSİZ 30 DAKİKALIK DENEME DERSİ AL
               </a>
-              <p className="mt-3 text-sm text-white/70">Hemen yaz, bugün başla.</p>
+              <p className="mt-5 text-sm text-white/70">Hemen yaz, bugün başla.</p>
             </div>
           </div>
         </div>
