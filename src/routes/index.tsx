@@ -184,18 +184,6 @@ function Index() {
           />
         </div>
 
-        {/* Brand mark top-left */}
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-10 md:pt-12">
-          <div className="flex items-center gap-4">
-            <img
-              src={logoAsset.url}
-              alt="Erkan Oduncu Logo"
-              className="h-14 w-auto md:h-16"
-            />
-          </div>
-        </div>
-
-        {/* Headline block */}
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24">
           <div className="max-w-2xl">
             <h1 className="font-display leading-[0.85] fade-up">
