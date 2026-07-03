@@ -122,14 +122,14 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-        <div className="mx-auto max-w-7xl px-8 md:px-12 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
+        <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
           <a href="/" className="flex items-center gap-3 shrink-0">
             <img src={logoAsset.url} alt="Erkan Oduncu" className="h-9 w-auto md:h-10" />
             <span className="font-display text-lg md:text-xl uppercase tracking-wider text-gray-900 hidden sm:inline">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
           </a>
-          <ul className="hidden sm:flex items-center gap-6 md:gap-8 lg:gap-10 text-xs md:text-sm text-gray-600 tracking-wide">
+          <ul className="hidden md:flex items-center gap-4 lg:gap-8 text-xs lg:text-sm text-gray-600 tracking-wide">
             {[
               { l: "Anasayfa", h: "/" },
               { l: "Hakkımızda", h: "#hakkimizda" },
@@ -138,7 +138,7 @@ function Index() {
               { l: "İletişim", h: "#iletisim" },
             ].map((item) => (
               <li key={item.l}>
-                <a href={item.h} className="hover:text-gray-900 transition-colors">
+                <a href={item.h} className="hover:text-gray-900 transition-colors whitespace-nowrap">
                   {item.l}
                 </a>
               </li>
@@ -148,7 +148,7 @@ function Index() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-5 md:px-6 py-2.5 md:py-3 text-sm hover:bg-gold-bright transition-colors shrink-0 ml-4 md:ml-10 shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full bg-gold text-background font-semibold px-4 lg:px-6 py-2 lg:py-2.5 text-sm hover:bg-gold-bright transition-colors shrink-0 ml-2 md:ml-6 lg:ml-10 shadow-sm whitespace-nowrap"
           >
             İletişime Geç
           </a>
