@@ -114,9 +114,9 @@ function Index() {
   ];
 
   const transformations = [
-    { name: "Mert A.", before: transform1.url, after: transform2.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
-    { name: "Selin K.", before: transform3.url, after: transform4.url, result: "16 haftada sıkı form", note: "Kuvvet antrenmanı ile sağlıklı bir görünüm." },
-    { name: "Kaan B.", before: transform2.url, after: transform3.url, result: "20 haftada +6kg kas", note: "Hipertrofi odaklı program ile kas kazanımı." },
+    { name: "Mert A.", image: transform1.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
+    { name: "Selin K.", image: transform3.url, result: "16 haftada sıkı form", note: "Kuvvet antrenmanı ile sağlıklı bir görünüm." },
+    { name: "Kaan B.", image: transform4.url, result: "20 haftada +6kg kas", note: "Hipertrofi odaklı program ile kas kazanımı." },
   ];
 
   return (
@@ -310,19 +310,8 @@ function Index() {
         <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {transformations.map((t) => (
             <article key={t.name} className="bg-card border border-border p-4 flex flex-col">
-              <div className="grid grid-cols-2 gap-2">
-                <figure className="relative overflow-hidden border border-border">
-                  <img src={t.before} alt={`${t.name} öncesi`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
-                  <figcaption className="absolute top-2 left-2 bg-background/80 backdrop-blur px-2 py-0.5 eyebrow text-white border border-border text-[10px]">
-                    Öncesi
-                  </figcaption>
-                </figure>
-                <figure className="relative overflow-hidden border border-border">
-                  <img src={t.after} alt={`${t.name} sonrası`} loading="lazy" className="w-full h-56 md:h-64 object-cover" />
-                  <figcaption className="absolute top-2 right-2 bg-gold text-background px-2 py-0.5 eyebrow text-[10px]">
-                    Sonrası
-                  </figcaption>
-                </figure>
+              <div className="overflow-hidden border border-border">
+                <img src={t.image} alt={`${t.name} önce sonra`} loading="lazy" className="w-full object-contain" />
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="font-display text-lg uppercase text-white">{t.name}</h3>
