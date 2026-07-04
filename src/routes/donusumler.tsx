@@ -54,11 +54,11 @@ const items: Item[] = [
     note: "Postür düzeltme ve kas kazanımı odaklı program.",
   },
   {
-    name: "Erkek Danışan",
-    duration: "24 hafta",
-    result: "Kas kazanımı & definasyon",
+    name: "Kadın Danışan",
+    duration: "8 hafta",
+    result: "Sıkılaşma & form",
     image: transform3.url,
-    note: "Hipertrofi odaklı program ile belirgin kas gelişimi.",
+    note: "Kuvvet antrenmanı ile sıkı ve sağlıklı bir görünüm.",
   },
   {
     name: "Kadın Danışan",
