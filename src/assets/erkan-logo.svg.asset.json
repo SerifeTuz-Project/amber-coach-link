@@ -1,11 +1,6 @@
 {
   "version": 1,
-  "asset_id": "f9b41fed-e862-445c-87b9-0762931bce75",
-  "project_id": "fe1c0ad2-aef0-4359-ab1d-c43c9b1df681",
-  "url": "/__l5e/assets-v1/f9b41fed-e862-445c-87b9-0762931bce75/erkan-logo.svg",
-  "r2_key": "a/v1/fe1c0ad2-aef0-4359-ab1d-c43c9b1df681/f9b41fed-e862-445c-87b9-0762931bce75/erkan-logo.svg",
+  "url": "/erkan-logo.svg",
   "original_filename": "erkan-logo.svg",
-  "size": 5142,
-  "content_type": "image/svg+xml",
-  "created_at": "2026-07-03T14:54:36Z"
+  "content_type": "image/svg+xml"
 }
