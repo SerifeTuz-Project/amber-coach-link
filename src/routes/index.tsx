@@ -114,7 +114,7 @@ function Index() {
 
   const transformations = [
     { name: "Mert A.", image: transform1.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
-    { name: "Erkek Danışan", image: transform2.url, result: "20 haftada komple form", note: "Postür düzeltme ve kas kazanımı odaklı program." },
+    { name: "Kadın Danışan", image: transform2.url, result: "20 haftada komple form", note: "Postür düzeltme ve sıkılaşma odaklı program." },
     { name: "Erkek Danışan", image: transform5.url, result: "16 haftada kas tanımı", note: "Hipertrofi odaklı program ile belirgin kas gelişimi." },
   ];
 
