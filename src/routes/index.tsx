@@ -121,7 +121,7 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-white/10">
         <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
           <a href="/" className="flex items-center gap-3 shrink-0">
             <img
@@ -129,11 +129,11 @@ function Index() {
               alt="Erkan Oduncu Logo"
               className="h-8 w-auto md:h-10"
             />
-            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-gray-900">
+            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
           </a>
-          <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-gray-600 tracking-wide">
+          <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-white/70 tracking-wide">
             {[
               { l: "Anasayfa", h: "/" },
               { l: "Hakkımızda", h: "#hakkimizda" },
@@ -142,7 +142,7 @@ function Index() {
               { l: "İletişim", h: "#iletisim" },
             ].map((item) => (
               <li key={item.l}>
-                <a href={item.h} className="hover:text-gray-900 transition-colors whitespace-nowrap">
+                <a href={item.h} className="hover:text-white transition-colors whitespace-nowrap">
                   {item.l}
                 </a>
               </li>
@@ -158,13 +158,13 @@ function Index() {
           <img
             src={portraitAsset.url}
             alt="Personal Trainer Erkan Oduncu spor salonunda portre"
-            className="absolute inset-y-0 right-0 h-full w-full md:w-[65%] object-cover object-[70%_center]"
+            className="absolute inset-y-0 right-0 h-full w-full md:w-[55%] object-cover object-[center_center]"
           />
           <div
             className="absolute inset-0 hidden md:block"
             style={{
               background:
-                "linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 30%, rgba(10,10,10,0.85) 46%, rgba(10,10,10,0.3) 68%, rgba(10,10,10,0.05) 100%)",
+                "linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 38%, rgba(10,10,10,0.85) 52%, rgba(10,10,10,0.2) 75%, rgba(10,10,10,0.0) 100%)",
             }}
           />
           <div
@@ -193,12 +193,9 @@ function Index() {
             </h1>
 
             <div className="mt-6 md:mt-8 fade-up">
-              <div className="font-display text-2xl md:text-3xl text-white tracking-wide">
-                HEDEFİNE BİRLİKTE
-              </div>
-              <div className="font-display text-2xl md:text-3xl text-gold tracking-wide">
-                ULAŞALIM!
-              </div>
+              <p className="text-base md:text-lg text-white/70 tracking-wide">
+                Hedefine birlikte ulaşalım.
+              </p>
             </div>
 
             <div className="mt-7 md:mt-9 fade-up">
