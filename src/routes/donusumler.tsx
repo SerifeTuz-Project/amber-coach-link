@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
-import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
 import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
 import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
 
@@ -39,20 +37,6 @@ type Item = {
 };
 
 const items: Item[] = [
-  {
-    name: "Erkek Danışan",
-    duration: "16 hafta",
-    result: "Yağ kaybı & kas tanımı",
-    image: transform1.url,
-    note: "Disiplinli beslenme ve düzenli antrenman ile net bir form değişimi.",
-  },
-  {
-    name: "Erkek Danışan",
-    duration: "20 hafta",
-    result: "Komple form dönüşümü",
-    image: transform2.url,
-    note: "Postür düzeltme ve kas kazanımı odaklı program.",
-  },
   {
     name: "Kadın Danışan",
     duration: "8 hafta",

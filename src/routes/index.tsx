@@ -4,8 +4,7 @@ import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 import logoAsset from "@/assets/erkan-logo.svg.asset.json";
 import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
 import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
-import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
-import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
+import transform5 from "@/assets/transformations/transform-5.jpg.asset.json";
 
 
 const WA_URL =
@@ -115,8 +114,8 @@ function Index() {
 
   const transformations = [
     { name: "Mert A.", image: transform1.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
-    { name: "Selin K.", image: transform3.url, result: "16 haftada sıkı form", note: "Kuvvet antrenmanı ile sağlıklı bir görünüm." },
-    { name: "Kaan B.", image: transform4.url, result: "20 haftada +6kg kas", note: "Hipertrofi odaklı program ile kas kazanımı." },
+    { name: "Erkek Danışan", image: transform2.url, result: "20 haftada komple form", note: "Postür düzeltme ve kas kazanımı odaklı program." },
+    { name: "Erkek Danışan", image: transform5.url, result: "16 haftada kas tanımı", note: "Hipertrofi odaklı program ile belirgin kas gelişimi." },
   ];
 
   return (
