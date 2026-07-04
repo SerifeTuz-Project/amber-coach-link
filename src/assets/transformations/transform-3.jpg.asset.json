@@ -1,11 +1,6 @@
 {
   "version": 1,
-  "asset_id": "5a51e724-4e04-4c10-b813-5535951f7062",
-  "project_id": "fe1c0ad2-aef0-4359-ab1d-c43c9b1df681",
-  "url": "/__l5e/assets-v1/5a51e724-4e04-4c10-b813-5535951f7062/transform-3.jpg",
-  "r2_key": "a/v1/fe1c0ad2-aef0-4359-ab1d-c43c9b1df681/5a51e724-4e04-4c10-b813-5535951f7062/transform-3.jpg",
+  "url": "/transform-3.jpg",
   "original_filename": "transform-3.jpg",
-  "size": 169808,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-25T10:51:04Z"
+  "content_type": "image/jpeg"
 }
