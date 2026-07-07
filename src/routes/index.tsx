@@ -1,11 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
-import logoAsset from "@/assets/erkan-logo.svg.asset.json";
-import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
-import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
-import transform5 from "@/assets/transformations/transform-5.jpg.asset.json";
-
+import heroImg from "@/assets/hero-gym.jpg";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -112,23 +106,12 @@ function Index() {
     "Sorularını cevaplarız",
   ];
 
-  const transformations = [
-    { name: "Mert A.", image: transform1.url, result: "12 haftada -8kg", note: "Yağ kaybı ve belirgin form değişimi." },
-    { name: "Kadın Danışan", image: transform2.url, result: "20 haftada komple form", note: "Kilo verme ve form odaklı program." },
-    { name: "Erkek Danışan", image: transform5.url, result: "16 haftada kas tanımı", note: "Hipertrofi odaklı program ile belirgin kas gelişimi." },
-  ];
-
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-white/10">
         <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
           <a href="/" className="flex items-center gap-3 shrink-0">
-            <img
-              src={logoAsset.url}
-              alt="Erkan Oduncu Logo"
-              className="h-8 w-auto md:h-10"
-            />
             <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
@@ -136,10 +119,10 @@ function Index() {
           <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-white/70 tracking-wide">
             {[
               { l: "Anasayfa", h: "/" },
-              { l: "Hakkımızda", h: "#hakkimizda" },
-              { l: "Danışmanlık Paketleri", h: "#hizmetler" },
-              { l: "Sık Sorulan Sorular", h: "#sss" },
-              { l: "İletişim", h: "#iletisim" },
+              { l: "Hakkımda", h: "/hakkimda" },
+              { l: "Danışmanlık Paketleri", h: "/paketler" },
+              { l: "Sık Sorulan Sorular", h: "/sss" },
+              { l: "Dönüşümler", h: "/donusumler" },
             ].map((item) => (
               <li key={item.l}>
                 <a href={item.h} className="hover:text-white transition-colors whitespace-nowrap">
@@ -152,68 +135,46 @@ function Index() {
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-[100svh] overflow-hidden">
-        {/* Background portrait — full bleed on the right, blends into dark on the left */}
-        <div className="absolute inset-0">
-          <img
-            src={portraitAsset.url}
-            alt="Personal Trainer Erkan Oduncu spor salonunda portre"
-            className="absolute inset-y-0 right-0 h-full w-full md:w-[55%] object-cover object-[center_center]"
-          />
-          <div
-            className="absolute inset-0 hidden md:block"
-            style={{
-              background:
-                "linear-gradient(90deg, #0A0A0A 0%, #0A0A0A 38%, rgba(10,10,10,0.85) 52%, rgba(10,10,10,0.2) 75%, rgba(10,10,10,0.0) 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0 md:hidden"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 40%, rgba(10,10,10,0.9) 75%, #0A0A0A 100%)",
-            }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse at 78% 45%, rgba(212,160,23,0.20), transparent 55%)",
-            }}
-          />
-        </div>
+      <section className="relative min-h-[100svh] flex items-end overflow-hidden">
+        <img
+          src={heroImg}
+          alt="Karanlık lüks spor salonunda ağırlık çalışan sporcu silueti"
+          width={1080}
+          height={1920}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 40%, #0A0A0A 95%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 20% 30%, rgba(212,160,23,0.18), transparent 55%)",
+          }}
+        />
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pt-8 md:pt-14 pb-14 md:pb-24">
-          <div className="max-w-2xl">
-            <h1 className="font-display leading-[0.85] fade-up">
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl">GÜÇLÜ BİR</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">BEDEN</span>
-              <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-1">GÜÇLÜ BİR</span>
-              <span className="block text-gold text-6xl sm:text-7xl md:text-8xl lg:text-9xl">ZİHİN</span>
-            </h1>
-
-            <div className="mt-6 md:mt-8 fade-up">
-              <p className="text-base md:text-lg text-white/70 tracking-wide">
-                Hedefine birlikte ulaşalım.
-              </p>
-            </div>
-
-            <div className="mt-7 md:mt-9 fade-up">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
-                🎁 ÜCRETSİZ 30 DAKİKALIK DENEME DERSİ AL
-              </a>
-              <p className="mt-5 text-sm text-white/70">Hemen yaz, bugün başla.</p>
-            </div>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pb-16 pt-28 md:pb-24">
+          <div className="eyebrow text-gold mb-5 fade-up">Personal Trainer · İstanbul</div>
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.88] uppercase fade-up">
+            <span className="block text-white">Güçlü Bir Beden</span>
+            <span className="block text-gold">Güçlü Bir Zihin</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg md:text-xl text-white/85 fade-up">
+            Hedefine birlikte ulaşalım.
+          </p>
+          <div className="mt-8 fade-up">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
+              🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
+            </a>
+            <p className="mt-3 text-sm text-muted-foreground">Hemen yaz, bugün başla.</p>
           </div>
         </div>
-
-        <div
-          className="absolute bottom-0 inset-x-0 h-px"
-          style={{ background: "linear-gradient(90deg, transparent, rgba(212,160,23,0.6), transparent)" }}
-        />
       </section>
-
-
 
       {/* SOCIAL PROOF BAR */}
       <section className="border-y border-border/70 bg-card/50">
@@ -248,7 +209,7 @@ function Index() {
       </section>
 
       {/* FREE TRIAL */}
-      <Section id="hakkimizda" eyebrow="Sana Özel Teklif">
+      <Section id="deneme" eyebrow="Sana Özel Teklif">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
           <div>
             <h2 className="font-display text-4xl md:text-6xl leading-[0.95] uppercase">
@@ -278,7 +239,7 @@ function Index() {
       <div className="hairline mx-auto max-w-6xl" />
 
       {/* SERVICES */}
-      <Section id="hizmetler" eyebrow="Ne Sunuyorum" title="Hizmetlerim">
+      <Section eyebrow="Ne Sunuyorum" title="Hizmetlerim">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {services.map((s) => (
             <div
@@ -301,27 +262,6 @@ function Index() {
         </div>
       </Section>
 
-      {/* DEĞİŞİMLER */}
-      <Section id="degisimler" eyebrow="Rakamlarla değil, sonuçlarla konuşuyoruz" title="Değişimler">
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-          {transformations.map((t) => (
-            <article key={t.name} className="bg-card border border-border p-4 flex flex-col">
-              <div className="overflow-hidden border border-border">
-                <img src={t.image} alt={`${t.name} önce sonra`} loading="lazy" className="w-full object-contain" />
-              </div>
-              <div className="mt-4 flex items-center justify-between">
-                <h3 className="font-display text-lg uppercase text-white">{t.name}</h3>
-                <span className="eyebrow text-gold-bright">{t.result}</span>
-              </div>
-              <p className="text-sm text-muted-foreground mt-2">{t.note}</p>
-            </article>
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <a href="/donusumler" className="btn-outline-gold">Tüm Dönüşümleri Gör →</a>
-        </div>
-      </Section>
-
       {/* HOW IT WORKS */}
       <Section eyebrow="Süreç" title="Nasıl Çalışır?" className="bg-card/30">
         <div className="grid md:grid-cols-3 gap-6">
@@ -340,7 +280,7 @@ function Index() {
       </Section>
 
       {/* TESTIMONIALS */}
-      <Section id="sss" eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
+      <Section eyebrow="Referanslar" title="Danışanlarım Ne Diyor?">
         <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t) => (
             <figure key={t.name} className="bg-card border border-border p-6 flex flex-col">
@@ -354,7 +294,6 @@ function Index() {
 
       {/* FINAL CTA */}
       <section
-        id="iletisim"
         className="section-pad px-5 md:px-8 text-center relative overflow-hidden"
         style={{
           background:

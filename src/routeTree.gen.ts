@@ -9,13 +9,31 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SssRouteImport } from './routes/sss'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PaketlerRouteImport } from './routes/paketler'
+import { Route as HakkimdaRouteImport } from './routes/hakkimda'
 import { Route as DonusumlerRouteImport } from './routes/donusumler'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SssRoute = SssRouteImport.update({
+  id: '/sss',
+  path: '/sss',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaketlerRoute = PaketlerRouteImport.update({
+  id: '/paketler',
+  path: '/paketler',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HakkimdaRoute = HakkimdaRouteImport.update({
+  id: '/hakkimda',
+  path: '/hakkimda',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DonusumlerRoute = DonusumlerRouteImport.update({
@@ -32,40 +50,86 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/donusumler': typeof DonusumlerRoute
+  '/hakkimda': typeof HakkimdaRoute
+  '/paketler': typeof PaketlerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sss': typeof SssRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/donusumler': typeof DonusumlerRoute
+  '/hakkimda': typeof HakkimdaRoute
+  '/paketler': typeof PaketlerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sss': typeof SssRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/donusumler': typeof DonusumlerRoute
+  '/hakkimda': typeof HakkimdaRoute
+  '/paketler': typeof PaketlerRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sss': typeof SssRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/donusumler' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/donusumler'
+    | '/hakkimda'
+    | '/paketler'
+    | '/sitemap.xml'
+    | '/sss'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/donusumler' | '/sitemap.xml'
-  id: '__root__' | '/' | '/donusumler' | '/sitemap.xml'
+  to: '/' | '/donusumler' | '/hakkimda' | '/paketler' | '/sitemap.xml' | '/sss'
+  id:
+    | '__root__'
+    | '/'
+    | '/donusumler'
+    | '/hakkimda'
+    | '/paketler'
+    | '/sitemap.xml'
+    | '/sss'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DonusumlerRoute: typeof DonusumlerRoute
+  HakkimdaRoute: typeof HakkimdaRoute
+  PaketlerRoute: typeof PaketlerRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SssRoute: typeof SssRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sss': {
+      id: '/sss'
+      path: '/sss'
+      fullPath: '/sss'
+      preLoaderRoute: typeof SssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paketler': {
+      id: '/paketler'
+      path: '/paketler'
+      fullPath: '/paketler'
+      preLoaderRoute: typeof PaketlerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hakkimda': {
+      id: '/hakkimda'
+      path: '/hakkimda'
+      fullPath: '/hakkimda'
+      preLoaderRoute: typeof HakkimdaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/donusumler': {
@@ -88,7 +152,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DonusumlerRoute: DonusumlerRoute,
+  HakkimdaRoute: HakkimdaRoute,
+  PaketlerRoute: PaketlerRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SssRoute: SssRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
