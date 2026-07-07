@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import portraitAsset from "@/assets/erkan-portrait.png.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -47,7 +46,7 @@ function About() {
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <img
-              src={portraitAsset.url}
+              src="/erkan-portrait.png.PNG"
               alt="Erkan Oduncu"
               loading="lazy"
               className="w-full aspect-[4/5] object-cover object-top"
