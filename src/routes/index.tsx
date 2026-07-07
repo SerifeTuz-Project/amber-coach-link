@@ -108,6 +108,32 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* NAVBAR */}
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
+          <a href="/" className="flex items-center gap-3 shrink-0">
+            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white">
+              Erkan <span className="text-gold">Oduncu</span>
+            </span>
+          </a>
+          <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-white/70 tracking-wide">
+            {[
+              { l: "Anasayfa", h: "/" },
+              { l: "Hakkımda", h: "/hakkimda" },
+              { l: "Danışmanlık Paketleri", h: "/paketler" },
+              { l: "Sık Sorulan Sorular", h: "/sss" },
+              { l: "Dönüşümler", h: "/donusumler" },
+            ].map((item) => (
+              <li key={item.l}>
+                <a href={item.h} className="hover:text-white transition-colors whitespace-nowrap">
+                  {item.l}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
       {/* HERO */}
       <section className="relative min-h-[100svh] flex items-end overflow-hidden">
         <img
