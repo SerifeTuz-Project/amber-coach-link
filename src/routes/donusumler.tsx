@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import transform1 from "@/assets/transformations/transform-1.jpg.asset.json";
+import transform2 from "@/assets/transformations/transform-2.jpg.asset.json";
 import transform3 from "@/assets/transformations/transform-3.jpg.asset.json";
 import transform4 from "@/assets/transformations/transform-4.jpg.asset.json";
+import transform5 from "@/assets/transformations/transform-5.jpg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -38,6 +41,20 @@ type Item = {
 
 const items: Item[] = [
   {
+    name: "Mert A.",
+    duration: "12 hafta",
+    result: "-8kg yağ kaybı",
+    image: transform1.url,
+    note: "Yağ kaybı ve belirgin form değişimi.",
+  },
+  {
+    name: "Kadın Danışan",
+    duration: "20 hafta",
+    result: "Komple form değişimi",
+    image: transform2.url,
+    note: "Kilo verme ve form odaklı program.",
+  },
+  {
     name: "Kadın Danışan",
     duration: "8 hafta",
     result: "Sıkılaşma & form",
@@ -50,6 +67,13 @@ const items: Item[] = [
     result: "Sıkılaşma & form",
     image: transform4.url,
     note: "Kuvvet antrenmanı ile sıkı ve sağlıklı bir görünüm.",
+  },
+  {
+    name: "Erkek Danışan",
+    duration: "16 hafta",
+    result: "Kas tanımı",
+    image: transform5.url,
+    note: "Hipertrofi odaklı program ile belirgin kas gelişimi.",
   },
 ];
 
