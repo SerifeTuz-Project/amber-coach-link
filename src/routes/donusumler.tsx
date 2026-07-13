@@ -62,11 +62,11 @@ const items: Item[] = [
     note: "Kuvvet antrenmanı ile sıkı ve sağlıklı bir görünüm.",
   },
   {
-    name: "Kadın Danışan",
+    name: "Erkek Danışan",
     duration: "14 hafta",
-    result: "Sıkılaşma & form",
+    result: "Kas tanımı & form",
     image: transform4.url,
-    note: "Kuvvet antrenmanı ile sıkı ve sağlıklı bir görünüm.",
+    note: "Kuvvet antrenmanı ile belirgin kas gelişimi.",
   },
   {
     name: "Erkek Danışan",
