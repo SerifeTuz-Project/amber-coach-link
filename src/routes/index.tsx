@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-gym.jpg";
+import logoAsset from "@/assets/erkan-logo.svg.asset.json";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -112,6 +113,7 @@ function Index() {
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-white/10">
         <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
           <a href="/" className="flex items-center gap-3 shrink-0">
+            <img src={logoAsset.url} alt="Erkan Oduncu Logo" className="h-8 w-auto md:h-10" />
             <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white">
               Erkan <span className="text-gold">Oduncu</span>
             </span>
