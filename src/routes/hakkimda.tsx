@@ -52,7 +52,7 @@ function About() {
               className="w-full aspect-[4/5] object-cover object-top"
             />
             <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gold text-ink p-6 md:p-8 max-w-[220px]">
-              <div className="font-display font-black text-3xl md:text-4xl">10+</div>
+              <div className="font-display font-black text-3xl md:text-4xl">5+</div>
               <div className="text-xs uppercase tracking-widest mt-1">Yıllık koçluk deneyimi</div>
             </div>
           </div>
