@@ -25,9 +25,14 @@ export const Route = createFileRoute("/hakkimda")({
         content: "5 yıllık antrenörlük deneyimi ve 500+ öğrenci ile fitness danışmanlığı.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/hakkimda" },
+      { property: "og:url", content: "https://erkanoduncu.com/hakkimda" },
+      {
+        name: "keywords",
+        content:
+          "Erkan Oduncu kimdir, Nişantaşı personal trainer hakkında, Şişli fitness koçu, EREPS antrenör İstanbul",
+      },
     ],
-    links: [{ rel: "canonical", href: "/hakkimda" }],
+    links: [{ rel: "canonical", href: "https://erkanoduncu.com/hakkimda" }],
   }),
   component: About,
 });

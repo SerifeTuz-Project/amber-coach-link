@@ -5,36 +5,22 @@ import { Plus, Minus } from "lucide-react";
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
 
-export const Route = createFileRoute("/sss")({
-  head: () => ({
-    meta: [
-      { title: "Sıkça Sorulan Sorular | Erkan Oduncu Personal Trainer" },
-      {
-        name: "description",
-        content:
-          "Erkan Oduncu fitness koçluğu hakkında sıkça sorulan sorular ve cevapları.",
-      },
-      { property: "og:title", content: "SSS | Erkan Oduncu" },
-      {
-        property: "og:description",
-        content: "Fitness koçluğu hakkında merak ettiğin her şey.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/sss" },
-    ],
-    links: [{ rel: "canonical", href: "/sss" }],
-  }),
-  component: FAQ,
-});
-
 const items = [
+  {
+    q: "Nişantaşı veya Teşvikiye'de personal trainer arıyorum, nasıl iletişime geçebilirim?",
+    a: "WhatsApp üzerinden +90 506 151 11 50 numarasına yazarak ücretsiz 30 dakikalık tanışma seansı randevusu alabilirsiniz. Nişantaşı ve Teşvikiye bölgesinde yüz yüze seanslar düzenlenmektedir.",
+  },
+  {
+    q: "Şişli'de kilo vermek istiyorum, nereden başlamalıyım?",
+    a: "İlk adım ücretsiz bir tanışma seansıdır. Bu seansta mevcut durumunuz, hedefiniz ve günlük yaşam alışkanlıklarınız değerlendirilir. Ardından size özel bir antrenman ve beslenme planı hazırlanır. WhatsApp'tan hemen randevu alabilirsiniz.",
+  },
   {
     q: "Daha önce hiç spor yapmadım. Koçlukla başlayabilir miyim?",
     a: "Kesinlikle. Sıfırdan başlayanlar için ilk hedef doğru form ve alışkanlık; ağırlık ya da tempo değil. Kendi hızında ilerlersin.",
   },
   {
     q: "Online koçluk gerçekten işe yarar mı?",
-    a: "Evet. Program sana özel yazılır, düzenli check-in ile ilerlemeni birlikte değerlendiririz. WhatsApp üzerinden her an ulaşabilirsin.",
+    a: "Evet. Program sana özel yazılır, düzenli check-in ile ilerlemeni birlikte değerlendiririz. WhatsApp üzerinden her an ulaşabilirsin. Türkiye'nin her yerinden ve yurt dışından danışanlarımız bulunmaktadır.",
   },
   {
     q: "12 derslik paket bittiğinde ne oluyor?",
@@ -49,6 +35,44 @@ const items = [
     a: "Her paket kişiye göre şekillendiğinden, önce hedefini ve durumunu konuşmayı tercih ediyorum. WhatsApp ya da form üzerinden ulaş; sana uygun teklifi birlikte belirleyelim.",
   },
 ];
+
+const SCHEMA_FAQ = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((it) => ({
+    "@type": "Question",
+    name: it.q,
+    acceptedAnswer: { "@type": "Answer", text: it.a },
+  })),
+});
+
+export const Route = createFileRoute("/sss")({
+  head: () => ({
+    meta: [
+      { title: "Sıkça Sorulan Sorular | Nişantaşı Personal Trainer Erkan Oduncu" },
+      {
+        name: "description",
+        content:
+          "Nişantaşı, Teşvikiye ve Şişli'de personal training hakkında merak edilen sorular. Kilo vermek, kas yapmak ve online koçluk hakkında tüm cevaplar.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Nişantaşı personal trainer SSS, Şişli kişisel antrenör, kilo vermek istiyorum Şişli, personal trainer fiyatları İstanbul, Teşvikiye PT",
+      },
+      { property: "og:title", content: "SSS | Nişantaşı Personal Trainer Erkan Oduncu" },
+      {
+        property: "og:description",
+        content: "Nişantaşı, Teşvikiye ve Şişli'de personal training hakkında merak ettiğin her şey.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://erkanoduncu.com/sss" },
+    ],
+    links: [{ rel: "canonical", href: "https://erkanoduncu.com/sss" }],
+    scripts: [{ type: "application/ld+json", children: SCHEMA_FAQ }],
+  }),
+  component: FAQ,
+});
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -82,6 +106,9 @@ function FAQ() {
             <span className="text-white">Sıkça Sorulan</span>{" "}
             <span className="text-gold">Sorular</span>
           </h1>
+          <p className="mt-4 text-muted-foreground max-w-2xl">
+            Nişantaşı, Teşvikiye ve Şişli'de personal training hakkında merak ettiğin her şeyin cevabı burada.
+          </p>
         </div>
       </header>
 
@@ -110,7 +137,7 @@ function FAQ() {
             <span className="text-gold">Yaz bana.</span>
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Aklındaki soruyu doğrudan WhatsApp'tan sorabilirsin.
+            Nişantaşı, Teşvikiye veya Şişli'de yüz yüze, ya da Türkiye'nin her yerinden online danışmanlık için hemen ulaş.
           </p>
           <a
             href={WA_URL}

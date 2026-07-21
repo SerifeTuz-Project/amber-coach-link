@@ -6,30 +6,135 @@ const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
 const IG_URL = "https://instagram.com/erkanodnc";
 
+const SCHEMA_LOCAL_BUSINESS = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["Person", "LocalBusiness"],
+  name: "Erkan Oduncu Personal Trainer",
+  jobTitle: "Kişisel Antrenör",
+  description:
+    "Nişantaşı, Teşvikiye ve Şişli'de yüz yüze ve online kişisel antrenörlük hizmeti. Kilo vermek, kas yapmak ve form değiştirmek isteyenler için özel fitness danışmanlığı.",
+  url: "https://erkanoduncu.com",
+  telephone: "+905061511150",
+  image: "https://erkanoduncu.com/erkan-portrait.png.PNG",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Nişantaşı",
+    addressLocality: "Şişli",
+    addressRegion: "İstanbul",
+    addressCountry: "TR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 41.0502,
+    longitude: 28.9938,
+  },
+  areaServed: [
+    { "@type": "City", name: "İstanbul" },
+    { "@type": "Neighborhood", name: "Nişantaşı" },
+    { "@type": "Neighborhood", name: "Teşvikiye" },
+    { "@type": "Neighborhood", name: "Şişli" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Fitness Danışmanlık Hizmetleri",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Yüz Yüze Personal Training",
+          description: "Nişantaşı ve Teşvikiye'de birebir kişisel antrenörlük seansları",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Online Fitness Danışmanlığı",
+          description: "Her yerden erişilebilen kişiye özel online koçluk programı",
+        },
+      },
+    ],
+  },
+  sameAs: ["https://instagram.com/erkanodnc"],
+});
+
+const SCHEMA_FAQ = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Nişantaşı'nda personal trainer nerede bulabilirim?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Nişantaşı ve Teşvikiye bölgesinde Erkan Oduncu ile birebir personal training seansları alabilirsiniz. WhatsApp'tan ulaşarak ücretsiz 30 dakikalık deneme dersi randevusu oluşturabilirsiniz.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Şişli'de kilo vermek için personal trainer tutsam mı?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Kilo vermek için bir personal trainer ile çalışmak süreci çok daha hızlı ve doğru hale getirir. Erkan Oduncu, Şişli bölgesinde kişiye özel beslenme ve antrenman programıyla kalıcı kilo kaybı için destek sunmaktadır.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Teşvikiye'de fitness koçu fiyatları ne kadar?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Fiyatlar kişiye özel programa göre belirlenmektedir. Ücretsiz 30 dakikalık tanışma seansı için WhatsApp'tan iletişime geçerek bilgi alabilirsiniz.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Online personal training Türkiye'de işe yarar mı?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Evet, online personal training kişiye özel program ve düzenli check-in ile son derece etkilidir. Türkiye genelinde ve yurt dışında birçok danışan bu yöntemle hedeflerine ulaşmıştır.",
+      },
+    },
+  ],
+});
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "İstanbul Personal Trainer | Nişantaşı & Teşvikiye Kişisel Antrenör | Erkan Oduncu" },
+      { title: "Nişantaşı Personal Trainer | Teşvikiye & Şişli PT | Erkan Oduncu" },
       {
         name: "description",
         content:
-          "İstanbul'un en iyi personal trainer'ı Erkan Oduncu ile zayıflamak artık çok kolay. Nişantaşı ve Teşvikiye'de yüz yüze veya online kişisel antrenörlük hizmeti. Ücretsiz 30 dakikalık deneme dersi için hemen iletişime geç!",
+          "Nişantaşı, Teşvikiye ve Şişli'de kilo vermek, kas yapmak veya form değiştirmek isteyenler için uzman personal trainer Erkan Oduncu. Ücretsiz 30 dakikalık deneme dersi için hemen iletişime geç!",
       },
       {
         name: "keywords",
         content:
-          "İstanbul personal trainer, Nişantaşı personal trainer, Teşvikiye kişisel antrenör, online kişisel antrenör, kilo verme, fitness koçu, Erkan Oduncu",
+          "Nişantaşı personal trainer, Teşvikiye personal trainer, Şişli personal trainer, Nişantaşı PT, Teşvikiye PT, Şişli PT, kilo vermek istiyorum, kişisel antrenör İstanbul, fitness koçu Şişli, kilo verme programı, personal trainer İstanbul",
       },
-      { property: "og:title", content: "İstanbul Personal Trainer | Erkan Oduncu" },
+      { name: "geo.region", content: "TR-34" },
+      { name: "geo.placename", content: "Nişantaşı, Şişli, İstanbul" },
+      { name: "geo.position", content: "41.0502;28.9938" },
+      { name: "ICBM", content: "41.0502, 28.9938" },
+      { property: "og:title", content: "Nişantaşı & Teşvikiye Personal Trainer | Erkan Oduncu" },
       {
         property: "og:description",
         content:
-          "Nişantaşı & Teşvikiye'de yüz yüze veya online kişisel antrenörlük. Ücretsiz 30 dk deneme dersi al.",
+          "Nişantaşı, Teşvikiye ve Şişli'de yüz yüze veya online kişisel antrenörlük. Kilo ver, kas yap, form değiştir. Ücretsiz deneme dersi al.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://erkanoduncu.com" },
+      { property: "og:image", content: "https://erkanoduncu.com/erkan-portrait.png.PNG" },
+      { property: "og:locale", content: "tr_TR" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Nişantaşı Personal Trainer | Erkan Oduncu" },
+      { name: "twitter:description", content: "Nişantaşı, Teşvikiye, Şişli'de kilo vermek ve form değiştirmek için uzman PT." },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://erkanoduncu.com" }],
+    scripts: [
+      { type: "application/ld+json", children: SCHEMA_LOCAL_BUSINESS },
+      { type: "application/ld+json", children: SCHEMA_FAQ },
+    ],
   }),
   component: Index,
 });
@@ -161,7 +266,7 @@ function Index() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pb-16 pt-28 md:pb-24">
-          <div className="eyebrow text-gold mb-5 fade-up">Personal Trainer · İstanbul</div>
+          <div className="eyebrow text-gold mb-5 fade-up">Personal Trainer · Nişantaşı / Teşvikiye / Şişli</div>
           <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.88] uppercase fade-up">
             <span className="block text-white">Güçlü Bir Beden</span>
             <span className="block text-gold">Güçlü Bir Zihin</span>

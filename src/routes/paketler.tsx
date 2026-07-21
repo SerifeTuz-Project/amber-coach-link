@@ -19,9 +19,14 @@ export const Route = createFileRoute("/paketler")({
         content: "Yüz yüze ve online fitness danışmanlık paketleri. Hedefine ulaşmak için doğru paketi seç.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/paketler" },
+      { property: "og:url", content: "https://erkanoduncu.com/paketler" },
+      {
+        name: "keywords",
+        content:
+          "Nişantaşı personal trainer fiyat, Teşvikiye PT paketi, Şişli online fitness danışmanlık, kişisel antrenör ücret İstanbul",
+      },
     ],
-    links: [{ rel: "canonical", href: "/paketler" }],
+    links: [{ rel: "canonical", href: "https://erkanoduncu.com/paketler" }],
   }),
   component: Packages,
 });
