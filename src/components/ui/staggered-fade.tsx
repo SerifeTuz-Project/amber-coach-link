@@ -1,4 +1,3 @@
-import { motion, useInView } from "framer-motion";
 import * as React from "react";
 
 type StaggeredFadeTwoLineProps = {
@@ -18,57 +17,36 @@ export function StaggeredFadeTwoLine({
   className,
   style,
 }: StaggeredFadeTwoLineProps) {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const letterVariant = {
-    hidden: { opacity: 0 },
-    show: (i: number) => ({
-      opacity: 1,
-      transition: { delay: i * 0.04, duration: 0.3 },
-    }),
-  };
-
-  if (!mounted) {
-    return (
-      <h1 className={className} style={style}>
-        <span className="block" style={{ color: line1Color }}>{line1}</span>
-        <span style={{ color: line2Color }}>{line2}</span>
-      </h1>
-    );
-  }
-
   return (
-    <h1 ref={ref} className={className} style={style}>
+    <h1 className={className} style={style}>
       <span className="block" style={{ color: line1Color }}>
         {line1.split("").map((char, i) => (
-          <motion.span
+          <span
             key={i}
-            variants={letterVariant}
-            custom={i}
-            initial="hidden"
-            animate={isInView ? "show" : "hidden"}
+            style={{
+              display: "inline-block",
+              opacity: 0,
+              animation: "staggerFadeIn 0.4s ease forwards",
+              animationDelay: `${i * 0.04}s`,
+            }}
           >
             {char === " " ? " " : char}
-          </motion.span>
+          </span>
         ))}
       </span>
       <span style={{ color: line2Color }}>
         {line2.split("").map((char, i) => (
-          <motion.span
+          <span
             key={i}
-            variants={letterVariant}
-            custom={line1.length + 1 + i}
-            initial="hidden"
-            animate={isInView ? "show" : "hidden"}
+            style={{
+              display: "inline-block",
+              opacity: 0,
+              animation: "staggerFadeIn 0.4s ease forwards",
+              animationDelay: `${(line1.length + 1 + i) * 0.04}s`,
+            }}
           >
             {char === " " ? " " : char}
-          </motion.span>
+          </span>
         ))}
       </span>
     </h1>

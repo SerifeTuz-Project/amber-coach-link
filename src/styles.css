@@ -182,3 +182,8 @@
 @utility fade-up {
   animation: fade-up 0.8s ease-out both;
 }
+
+@keyframes staggerFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
