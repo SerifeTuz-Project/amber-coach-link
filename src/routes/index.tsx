@@ -186,10 +186,85 @@ function Section({
 
 function Index() {
   const services = [
-    { icon: "🏋️", title: "Birebir PT", desc: "Birebir özel ders ve profesyonel rehberlik" },
-    { icon: "💻", title: "Online Koçluk", desc: "Bulunduğun her yerden bana ulaş" },
-    { icon: "🥗", title: "Beslenme Takibi", desc: "Kişisel beslenme planı ve takibi" },
-    { icon: "📊", title: "İlerleme Analizi", desc: "Haftalık değerlendirme ve performans takibi" },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          {/* Dambıl */}
+          <rect x="6" y="20" width="6" height="8" rx="2" />
+          <rect x="36" y="20" width="6" height="8" rx="2" />
+          <rect x="10" y="18" width="4" height="12" rx="1.5" />
+          <rect x="34" y="18" width="4" height="12" rx="1.5" />
+          <line x1="14" y1="24" x2="34" y2="24" />
+          {/* Küçük dambıl üstte */}
+          <rect x="16" y="8" width="3" height="6" rx="1" />
+          <rect x="29" y="8" width="3" height="6" rx="1" />
+          <line x1="19" y1="11" x2="29" y2="11" />
+        </svg>
+      ),
+      title: "Birebir PT",
+      desc: "Birebir özel ders ve profesyonel rehberlik",
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          {/* Laptop */}
+          <rect x="8" y="12" width="32" height="20" rx="2" />
+          <line x1="4" y1="36" x2="44" y2="36" />
+          <line x1="18" y1="36" x2="30" y2="36" strokeWidth="2.5" />
+          {/* Ekran içi: koşu figürü */}
+          <circle cx="24" cy="19" r="2" />
+          <line x1="24" y1="21" x2="22" y2="26" />
+          <line x1="22" y1="26" x2="19" y2="28" />
+          <line x1="22" y1="26" x2="25" y2="29" />
+          <line x1="24" y1="21" x2="27" y2="23" />
+          <line x1="27" y1="23" x2="29" y2="21" />
+        </svg>
+      ),
+      title: "Online Koçluk",
+      desc: "Bulunduğun her yerden bana ulaş",
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          {/* Tabak */}
+          <ellipse cx="24" cy="30" rx="16" ry="4" />
+          <path d="M8 30 Q8 42 24 42 Q40 42 40 30" />
+          {/* Yiyecekler üstte */}
+          <circle cx="20" cy="22" r="4" />
+          <circle cx="30" cy="20" r="5" />
+          <circle cx="24" cy="16" r="3" />
+          {/* Çatal */}
+          <line x1="6" y1="12" x2="6" y2="24" />
+          <line x1="4" y1="12" x2="4" y2="17" />
+          <line x1="6" y1="12" x2="6" y2="17" />
+          <line x1="8" y1="12" x2="8" y2="17" />
+          {/* Kaşık */}
+          <path d="M42 12 Q44 16 42 20 L42 28" />
+        </svg>
+      ),
+      title: "Beslenme Takibi",
+      desc: "Kişisel beslenme planı ve takibi",
+    },
+    {
+      icon: (
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          {/* Grafik ekran */}
+          <rect x="6" y="8" width="36" height="26" rx="2" />
+          <line x1="6" y1="34" x2="42" y2="34" />
+          <line x1="18" y1="38" x2="30" y2="38" />
+          <line x1="24" y1="34" x2="24" y2="38" />
+          {/* Bar chart */}
+          <rect x="12" y="22" width="5" height="8" fill="#D4A017" fillOpacity="0.25" />
+          <rect x="20" y="16" width="5" height="14" fill="#D4A017" fillOpacity="0.25" />
+          <rect x="28" y="19" width="5" height="11" fill="#D4A017" fillOpacity="0.25" />
+          {/* Trend çizgisi */}
+          <polyline points="14,22 22,15 30,18 38,13" strokeWidth="1.5" />
+          <circle cx="38" cy="13" r="2" fill="#D4A017" />
+        </svg>
+      ),
+      title: "İlerleme Analizi",
+      desc: "Haftalık değerlendirme ve performans takibi",
+    },
   ];
 
   const steps = [
@@ -327,7 +402,7 @@ function Index() {
               key={s.title}
               className="bg-card border border-border p-5 md:p-6 flex flex-col"
             >
-              <div className="text-3xl md:text-4xl text-gold mb-4">{s.icon}</div>
+              <div className="mb-5">{s.icon}</div>
               <h3 className="font-display text-xl md:text-2xl uppercase text-white">{s.title}</h3>
               <p className="text-sm text-muted-foreground mt-2 flex-1">{s.desc}</p>
               <a
