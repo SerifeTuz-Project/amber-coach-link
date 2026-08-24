@@ -125,9 +125,11 @@ export function PulseFitHero({
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all hover:scale-105"
             style={{
-              background: "#D4A017",
-              color: "#0A0A0A",
-              fontWeight: 600,
+              background: "#FFFFFF",
+              color: "#1a1a1a",
+              fontWeight: 500,
+              border: "1px solid #e2e8f0",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.10)",
             }}
           >
             {ctaButton.label}
