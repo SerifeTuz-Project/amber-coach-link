@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import heroImg from "@/assets/hero-gym.jpg";
 import logoAsset from "@/assets/erkan-logo.svg.asset.json";
+import { PulseFitHero } from "@/components/ui/pulse-fit-hero";
 
 const WA_URL =
   "https://wa.me/905061511150?text=Merhaba%2C%20ücretsiz%2030%20dakikalık%20deneme%20dersi%20hakkında%20bilgi%20almak%20istiyorum.";
@@ -214,94 +214,75 @@ function Index() {
 
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur border-b border-white/10">
-        <div className="mx-auto max-w-7xl px-5 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between gap-4">
-          <a href="/" className="flex items-center gap-3 shrink-0">
-            <img src={logoAsset.url} alt="Erkan Oduncu Logo" className="h-8 w-auto md:h-10" />
-            <span className="font-display text-lg md:text-xl uppercase tracking-wider text-white">
-              Erkan <span className="text-gold">Oduncu</span>
+      {/* HERO — PulseFitHero bileşeni */}
+      <PulseFitHero
+        logo={
+          <a href="/" className="flex items-center gap-3">
+            <img src={logoAsset.url} alt="Erkan Oduncu Logo" className="h-8 w-auto" />
+            <span>
+              Erkan <span style={{ color: "#D4A017" }}>Oduncu</span>
             </span>
           </a>
-          <ul className="hidden md:flex flex-1 items-center justify-end gap-4 lg:gap-8 text-xs lg:text-sm text-white/70 tracking-wide">
-            {[
-              { l: "Anasayfa", h: "/" },
-              { l: "Hakkımda", h: "/hakkimda" },
-              { l: "Danışmanlık Paketleri", h: "/paketler" },
-              { l: "Sık Sorulan Sorular", h: "/sss" },
-              { l: "Dönüşümler", h: "/donusumler" },
-            ].map((item) => (
-              <li key={item.l}>
-                <a href={item.h} className="hover:text-white transition-colors whitespace-nowrap">
-                  {item.l}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* HERO */}
-      <section className="relative min-h-[100svh] flex items-end overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Karanlık lüks spor salonunda ağırlık çalışan sporcu silueti"
-          width={1080}
-          height={1920}
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 40%, #0A0A0A 95%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 20% 30%, rgba(212,160,23,0.18), transparent 55%)",
-          }}
-        />
-
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8 pb-16 pt-28 md:pb-24">
-          <div className="eyebrow text-gold mb-5 fade-up">Personal Trainer · Nişantaşı / Teşvikiye / Şişli</div>
-          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.88] uppercase fade-up">
+        }
+        navigation={[
+          { label: "Anasayfa", href: "/" },
+          { label: "Hakkımda", href: "/hakkimda" },
+          { label: "Paketler", href: "/paketler" },
+          { label: "SSS", href: "/sss" },
+          { label: "Dönüşümler", href: "/donusumler" },
+        ]}
+        ctaButton={{ label: "🎁 Ücretsiz Ders Al", href: WA_URL }}
+        title={
+          <>
             <span className="block text-white">Güçlü Bir Beden</span>
-            <span className="block text-gold">Güçlü Bir Zihin</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg md:text-xl text-white/85 fade-up">
-            Hedefine birlikte ulaşalım.
-          </p>
-          <div className="mt-8 fade-up">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-base md:text-lg">
-              🎁 Ücretsiz 30 Dakikalık Deneme Dersi Al
-            </a>
-            <p className="mt-3 text-sm text-muted-foreground">Hemen yaz, bugün başla.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SOCIAL PROOF BAR */}
-      <section className="border-y border-border/70 bg-card/50">
-        <div className="mx-auto max-w-6xl grid grid-cols-3 divide-x divide-border/70">
-          {[
-            { i: "🏆", n: "+5", l: "Yıl Deneyim", d: "Profesyonel koçluk" },
-            { i: "👥", n: "500+", l: "Danışan", d: "Başarı hikayeleri" },
-            { i: "⭐", n: "4.9/5", l: "Memnuniyet", d: "%97 memnuniyet" },
-          ].map((s) => (
-            <div key={s.l} className="px-3 py-6 md:py-8 text-center">
-              <div className="text-2xl md:text-3xl mb-1">{s.i}</div>
-              <div className="font-display text-2xl md:text-3xl text-gold uppercase leading-none">
-                {s.n}
-              </div>
-              <div className="eyebrow text-muted-foreground mt-2">{s.l}</div>
-              <div className="text-xs text-muted-foreground/80 mt-1 hidden md:block">{s.d}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+            <span style={{ color: "#D4A017" }}>Güçlü Bir Zihin</span>
+          </>
+        }
+        subtitle="Nişantaşı ve Teşvikiye'de birebir personal training ile kilo ver, kas yap, formunu değiştir. Kişiye özel program, beslenme takibi ve 7/24 destek."
+        primaryAction={{ label: "Ücretsiz 30 dk Deneme Dersi", href: WA_URL }}
+        secondaryAction={{ label: "Dönüşümleri Gör", href: "/donusumler" }}
+        disclaimer="*Kredi kartı gerekmez. Hemen yaz, bugün başla."
+        socialProof={{
+          text: "Güvenilir sonuçlar, gerçek danışanlar",
+          stats: [
+            { value: "5+", label: "Yıl Deneyim" },
+            { value: "500+", label: "Danışan" },
+            { value: "4.9/5", label: "Memnuniyet" },
+          ],
+        }}
+        programs={[
+          {
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop",
+            category: "Kilo Verme",
+            title: "Yağ Yakma Programı",
+            href: "/kilo-vermek-istiyorum",
+          },
+          {
+            image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=500&fit=crop",
+            category: "Kas Yapma",
+            title: "Kas & Güç Antrenmanı",
+            href: "/paketler",
+          },
+          {
+            image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=500&fit=crop",
+            category: "Form Değişimi",
+            title: "Vücut Dönüşüm Programı",
+            href: "/donusumler",
+          },
+          {
+            image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400&h=500&fit=crop",
+            category: "Online Koçluk",
+            title: "Her Yerden Antrenman",
+            href: "/paketler",
+          },
+          {
+            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=500&fit=crop",
+            category: "Esneklik & Toparlanma",
+            title: "Mobility & Recovery",
+            href: "/paketler",
+          },
+        ]}
+      />
 
       {/* TRANSFORMATIONS TEASER */}
       <section className="px-5 md:px-8 pt-10">
