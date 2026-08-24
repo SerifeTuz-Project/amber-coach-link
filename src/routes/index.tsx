@@ -231,7 +231,7 @@ function Index() {
           { label: "SSS", href: "/sss" },
           { label: "Dönüşümler", href: "/donusumler" },
         ]}
-        ctaButton={{ label: "🎁 Ücretsiz Ders Al", href: WA_URL }}
+        ctaButton={{ label: "Ücretsiz Deneme Dersi Al", href: WA_URL }}
         title={
           <>
             <span className="block text-white">Güçlü Bir Beden</span>
