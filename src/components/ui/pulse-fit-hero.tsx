@@ -155,12 +155,11 @@ export function PulseFitHero({
 
             {/* Başlık */}
             <h1
-              className="font-display uppercase"
+              className="font-display"
               style={{
                 fontSize: "clamp(48px, 8vw, 96px)",
-                lineHeight: "0.9",
+                lineHeight: "0.95",
                 color: "#FFFFFF",
-                letterSpacing: "-0.01em",
               }}
             >
               {title}
@@ -335,7 +334,7 @@ export function PulseFitHero({
                     {program.category}
                   </span>
                   <h3
-                    className="font-display uppercase"
+                    className="font-display"
                     style={{
                       fontSize: "20px",
                       color: "#FFFFFF",
