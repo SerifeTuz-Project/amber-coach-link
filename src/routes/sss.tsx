@@ -20,7 +20,7 @@ const items = [
   },
   {
     q: "Online koçluk gerçekten işe yarar mı?",
-    a: "Evet. Program sana özel yazılır, düzenli check-in ile ilerlemeni birlikte değerlendiririz. WhatsApp üzerinden her an ulaşabilirsin. Türkiye'nin her yerinden ve yurt dışından danışanlarımız bulunmaktadır.",
+    a: "Evet, işe yarıyor. Program sana özel hazırlanır; haftalık check-in'lerle birlikte değerlendiririz, gerektiğinde güncelliyoruz. WhatsApp üzerinden her an ulaşabilirsin. Türkiye'nin dört bir yanından ve yurt dışından danışanlarım var.",
   },
   {
     q: "12 derslik paket bittiğinde ne oluyor?",
