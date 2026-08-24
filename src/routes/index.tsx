@@ -202,7 +202,7 @@ function Index() {
   const testimonials = [
     { name: "Selin K.", text: "3 ayda 12 kilo verdim ve kendimi çok daha enerjik hissediyorum." },
     { name: "Mert A.", text: "Online koçluk programı sayesinde evden antrenman yapmayı öğrendim." },
-    { name: "Zeynep T.", text: "Beslenme planı ve takip sistemi inanılmaz işe yarıyor." },
+    { name: "Şerife", text: "Erkan Bey ile tanıştığımda başka bir antrenörle çalışıyordum. Öğrencileriyle nasıl ilgilendiğini görünce neden bu kadar başarılı bir eğitmen olduğunu anladım. Samimi, disiplinli ve saygılı bir eğitmen; onu bulduğum için çok şanslıyım." },
   ];
 
   const trialIncludes = [
