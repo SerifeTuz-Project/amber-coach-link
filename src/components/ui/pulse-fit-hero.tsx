@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { StaggeredFadeTwoLine } from "@/components/ui/staggered-fade";
 
 interface NavigationItem {
   label: string;
@@ -22,7 +23,9 @@ interface PulseFitHeroProps {
     label: string;
     href: string;
   };
-  title: React.ReactNode;
+  title?: React.ReactNode;
+  titleLine1?: string;
+  titleLine2?: string;
   subtitle: string;
   primaryAction?: {
     label: string;
@@ -47,6 +50,8 @@ export function PulseFitHero({
   navigation = [],
   ctaButton,
   title,
+  titleLine1,
+  titleLine2,
   subtitle,
   primaryAction,
   secondaryAction,
@@ -154,16 +159,25 @@ export function PulseFitHero({
             </div>
 
             {/* Başlık */}
-            <h1
-              className="font-display"
-              style={{
-                fontSize: "clamp(48px, 8vw, 96px)",
-                lineHeight: "0.95",
-                color: "#FFFFFF",
-              }}
-            >
-              {title}
-            </h1>
+            {titleLine1 && titleLine2 ? (
+              <StaggeredFadeTwoLine
+                line1={titleLine1}
+                line2={titleLine2}
+                className="font-display"
+                style={{ fontSize: "clamp(48px, 8vw, 96px)", lineHeight: "0.95" }}
+              />
+            ) : (
+              <h1
+                className="font-display"
+                style={{
+                  fontSize: "clamp(48px, 8vw, 96px)",
+                  lineHeight: "0.95",
+                  color: "#FFFFFF",
+                }}
+              >
+                {title}
+              </h1>
+            )}
 
             {/* Alt Başlık */}
             <p
