@@ -232,12 +232,9 @@ function Index() {
           { label: "Dönüşümler", href: "/donusumler" },
         ]}
         ctaButton={{ label: "Ücretsiz Deneme Dersi Al", href: WA_URL }}
-        title={
-          <>
-            <span className="block text-white">Güçlü Bir Beden</span>
-            <span style={{ color: "#D4A017" }}>Güçlü Bir Zihin</span>
-          </>
-        }
+        title={null}
+        titleLine1="Güçlü Bir Beden"
+        titleLine2="Güçlü Bir Zihin"
         subtitle="Nişantaşı ve Teşvikiye'de birebir personal training ile kilo ver, kas yap, formunu değiştir. Kişiye özel program, beslenme takibi ve 7/24 destek."
         primaryAction={{ label: "Ücretsiz 30 dk Deneme Dersi", href: WA_URL }}
         secondaryAction={{ label: "Dönüşümleri Gör", href: "/donusumler" }}
