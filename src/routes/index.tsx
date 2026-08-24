@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logoAsset from "@/assets/erkan-logo.svg.asset.json";
 import { PulseFitHero } from "@/components/ui/pulse-fit-hero";
 
 const WA_URL =
@@ -217,11 +216,8 @@ function Index() {
       {/* HERO — PulseFitHero bileşeni */}
       <PulseFitHero
         logo={
-          <a href="/" className="flex items-center gap-3">
-            <img src={logoAsset.url} alt="Erkan Oduncu Logo" className="h-8 w-auto" />
-            <span>
-              Erkan <span style={{ color: "#D4A017" }}>Oduncu</span>
-            </span>
+          <a href="/" className="flex items-center">
+            Erkan <span style={{ color: "#D4A017" }}>&nbsp;Oduncu</span>
           </a>
         }
         navigation={[
