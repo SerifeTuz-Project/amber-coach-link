@@ -13,6 +13,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/paketler", changefreq: "monthly", priority: "0.9" },
           { path: "/sss", changefreq: "monthly", priority: "0.7" },
           { path: "/donusumler", changefreq: "weekly", priority: "0.8" },
+          { path: "/nisantasi-personal-trainer", changefreq: "monthly", priority: "0.9" },
+          { path: "/tesvikiye-personal-trainer", changefreq: "monthly", priority: "0.9" },
+          { path: "/sisli-personal-trainer", changefreq: "monthly", priority: "0.9" },
+          { path: "/kilo-vermek-istiyorum", changefreq: "monthly", priority: "0.9" },
         ];
         const now = new Date().toISOString().split("T")[0];
         const urls = entries.map(
