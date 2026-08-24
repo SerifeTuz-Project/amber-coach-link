@@ -188,17 +188,28 @@ function Index() {
   const services = [
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          {/* Dambıl */}
-          <rect x="6" y="20" width="6" height="8" rx="2" />
-          <rect x="36" y="20" width="6" height="8" rx="2" />
-          <rect x="10" y="18" width="4" height="12" rx="1.5" />
-          <rect x="34" y="18" width="4" height="12" rx="1.5" />
-          <line x1="14" y1="24" x2="34" y2="24" />
-          {/* Küçük dambıl üstte */}
-          <rect x="16" y="8" width="3" height="6" rx="1" />
-          <rect x="29" y="8" width="3" height="6" rx="1" />
-          <line x1="19" y1="11" x2="29" y2="11" />
+        // Antrenör + danışan bench press — 1 numaralı referans
+        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" stroke="#D4A017" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Antrenör (üstte ayakta) — kafa */}
+          <circle cx="50" cy="10" r="7" />
+          {/* Madalya */}
+          <circle cx="50" cy="20" r="3" />
+          {/* Antrenör gövde */}
+          <path d="M36 38 Q50 28 64 38" />
+          {/* Barbell — antrenör tutuyor */}
+          <line x1="10" y1="38" x2="90" y2="38" />
+          <rect x="5" y="33" width="8" height="10" rx="2" />
+          <rect x="87" y="33" width="8" height="10" rx="2" />
+          <rect x="13" y="35" width="6" height="6" rx="1" />
+          <rect x="81" y="35" width="6" height="6" rx="1" />
+          {/* Danışan (altta bench press) — kafa */}
+          <circle cx="50" cy="55" r="7" />
+          {/* Danışan kolları yukarı */}
+          <path d="M30 65 Q35 52 50 62 Q65 52 70 65" />
+          {/* Danışan gövde/bacaklar */}
+          <path d="M36 68 L36 82 M64 68 L64 82" />
+          <line x1="36" y1="68" x2="64" y2="68" />
+          <path d="M36 82 L30 92 M64 82 L70 92" />
         </svg>
       ),
       title: "Birebir PT",
@@ -206,18 +217,27 @@ function Index() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          {/* Laptop */}
-          <rect x="8" y="12" width="32" height="20" rx="2" />
-          <line x1="4" y1="36" x2="44" y2="36" />
-          <line x1="18" y1="36" x2="30" y2="36" strokeWidth="2.5" />
-          {/* Ekran içi: koşu figürü */}
-          <circle cx="24" cy="19" r="2" />
-          <line x1="24" y1="21" x2="22" y2="26" />
-          <line x1="22" y1="26" x2="19" y2="28" />
-          <line x1="22" y1="26" x2="25" y2="29" />
-          <line x1="24" y1="21" x2="27" y2="23" />
-          <line x1="27" y1="23" x2="29" y2="21" />
+        // Monitör + kişi dambıl kaldırıyor + play butonu — 2 numaralı referans
+        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" stroke="#D4A017" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Monitör çerçevesi */}
+          <rect x="8" y="10" width="84" height="62" rx="5" />
+          {/* Ekran ayağı */}
+          <line x1="50" y1="72" x2="50" y2="84" />
+          <line x1="35" y1="84" x2="65" y2="84" />
+          {/* Kişi kafası */}
+          <circle cx="36" cy="28" r="8" />
+          {/* Saç */}
+          <path d="M28 24 Q30 18 36 20 Q42 18 44 24" />
+          {/* Kişi gövdesi */}
+          <path d="M28 36 Q36 32 44 36 L44 56 L28 56 Z" />
+          {/* Dambıl — kol kaldırıyor */}
+          <line x1="44" y1="38" x2="62" y2="28" />
+          <rect x="59" y="22" width="14" height="6" rx="2" />
+          <rect x="57" y="20" width="4" height="10" rx="1" />
+          <rect x="73" y="20" width="4" height="10" rx="1" />
+          {/* Play butonu */}
+          <rect x="16" y="56" width="68" height="10" rx="2" />
+          <polygon cx="50" cy="61" points="45,58 45,64 51,61" fill="#D4A017" stroke="none" />
         </svg>
       ),
       title: "Online Koçluk",
@@ -225,21 +245,25 @@ function Index() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          {/* Tabak */}
-          <ellipse cx="24" cy="30" rx="16" ry="4" />
-          <path d="M8 30 Q8 42 24 42 Q40 42 40 30" />
-          {/* Yiyecekler üstte */}
-          <circle cx="20" cy="22" r="4" />
-          <circle cx="30" cy="20" r="5" />
-          <circle cx="24" cy="16" r="3" />
-          {/* Çatal */}
-          <line x1="6" y1="12" x2="6" y2="24" />
-          <line x1="4" y1="12" x2="4" y2="17" />
-          <line x1="6" y1="12" x2="6" y2="17" />
-          <line x1="8" y1="12" x2="8" y2="17" />
-          {/* Kaşık */}
-          <path d="M42 12 Q44 16 42 20 L42 28" />
+        // Tabak: yumurta + tavuk budu + limon dilimi — 3 numaralı referans
+        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" stroke="#D4A017" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          {/* Dış tabak çemberi */}
+          <circle cx="50" cy="52" r="42" />
+          {/* Yumurta beyazı */}
+          <path d="M22 55 Q18 40 30 38 Q38 32 42 44 Q50 38 58 44 Q60 52 52 58 Q42 65 30 62 Q20 60 22 55Z" />
+          {/* Yumurta sarısı */}
+          <circle cx="36" cy="50" r="8" />
+          {/* Tavuk budu */}
+          <path d="M58 30 Q68 22 74 28 Q82 35 76 44 Q70 52 60 48 Q54 43 58 30Z" />
+          <line x1="74" y1="44" x2="82" y2="56" />
+          <circle cx="83" cy="58" r="4" />
+          <circle cx="78" cy="62" r="3" />
+          {/* Limon dilimi */}
+          <circle cx="44" cy="70" r="12" />
+          <line x1="44" y1="58" x2="44" y2="82" />
+          <line x1="32" y1="70" x2="56" y2="70" />
+          <line x1="34" y1="62" x2="54" y2="78" />
+          <line x1="54" y1="62" x2="34" y2="78" />
         </svg>
       ),
       title: "Beslenme Takibi",
@@ -247,19 +271,22 @@ function Index() {
     },
     {
       icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#D4A017" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          {/* Grafik ekran */}
-          <rect x="6" y="8" width="36" height="26" rx="2" />
-          <line x1="6" y1="34" x2="42" y2="34" />
-          <line x1="18" y1="38" x2="30" y2="38" />
-          <line x1="24" y1="34" x2="24" y2="38" />
-          {/* Bar chart */}
-          <rect x="12" y="22" width="5" height="8" fill="#D4A017" fillOpacity="0.25" />
-          <rect x="20" y="16" width="5" height="14" fill="#D4A017" fillOpacity="0.25" />
-          <rect x="28" y="19" width="5" height="11" fill="#D4A017" fillOpacity="0.25" />
+        // Bar grafik + yukarı trend oku — 4 numaralı referans
+        <svg width="56" height="56" viewBox="0 0 100 100" fill="none" stroke="#D4A017" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+          {/* Y ekseni */}
+          <line x1="18" y1="10" x2="18" y2="82" />
+          {/* X ekseni */}
+          <line x1="18" y1="82" x2="92" y2="82" />
+          {/* Bar 1 (kısa) */}
+          <rect x="24" y="64" width="16" height="18" rx="2" strokeWidth="3.5" />
+          {/* Bar 2 (orta) */}
+          <rect x="46" y="50" width="16" height="32" rx="2" strokeWidth="3.5" />
+          {/* Bar 3 (uzun) */}
+          <rect x="68" y="32" width="16" height="50" rx="2" strokeWidth="3.5" />
           {/* Trend çizgisi */}
-          <polyline points="14,22 22,15 30,18 38,13" strokeWidth="1.5" />
-          <circle cx="38" cy="13" r="2" fill="#D4A017" />
+          <polyline points="30,58 52,40 74,24" strokeWidth="3.5" />
+          {/* Ok ucu */}
+          <polygon points="74,24 86,16 78,30" fill="#D4A017" stroke="#D4A017" strokeWidth="2" strokeLinejoin="round" />
         </svg>
       ),
       title: "İlerleme Analizi",
