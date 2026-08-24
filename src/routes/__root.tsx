@@ -80,6 +80,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Erkan Oduncu | Kişisel Antrenör" },
       { name: "description", content: "Fitness koçu Erkan Oduncu ile ücretsiz deneme seansı için hemen iletişime geç." },
       { name: "author", content: "Erkan Oduncu" },
+      { name: "google-site-verification", content: "_hc6VmHhISzL0vYppwglCwqzAKbHM8SCJ4zl4_QjNYM" },
       { property: "og:title", content: "Erkan Oduncu | Kişisel Antrenör" },
       { property: "og:description", content: "Fitness koçu Erkan Oduncu ile ücretsiz deneme seansı için hemen iletişime geç." },
       { property: "og:type", content: "website" },
