@@ -78,12 +78,7 @@ export function PulseFitHero({
       />
 
       {/* Header */}
-      <motion.header
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="relative z-20 flex flex-row justify-between items-center px-5 md:px-10 lg:px-16 h-16 md:h-20 border-b border-white/10"
-      >
+      <header className="relative z-20 flex flex-row justify-between items-center px-5 md:px-10 lg:px-16 h-16 md:h-20 border-b border-white/10">
         {/* Logo */}
         <div className="font-display text-lg md:text-xl uppercase tracking-wider text-white shrink-0">
           {logo ?? (
@@ -138,7 +133,7 @@ export function PulseFitHero({
             {ctaButton.label}
           </a>
         )}
-      </motion.header>
+      </header>
 
       {/* Ana İçerik */}
       {children ? (
@@ -147,12 +142,7 @@ export function PulseFitHero({
         </div>
       ) : (
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-5 md:px-8 py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col items-center text-center max-w-5xl gap-8"
-          >
+          <div className="flex flex-col items-center text-center max-w-5xl gap-8">
             {/* Eyebrow */}
             <div
               className="eyebrow"
@@ -188,12 +178,7 @@ export function PulseFitHero({
 
             {/* Butonlar */}
             {(primaryAction || secondaryAction) && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-center gap-4"
-              >
+              <div className="flex flex-col sm:flex-row items-center gap-4">
                 {primaryAction && (
                   <a
                     href={primaryAction.href}
@@ -232,29 +217,19 @@ export function PulseFitHero({
                     {secondaryAction.label}
                   </a>
                 )}
-              </motion.div>
+              </div>
             )}
 
             {/* Disclaimer */}
             {disclaimer && (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", fontStyle: "italic" }}
-              >
+              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", fontStyle: "italic" }}>
                 {disclaimer}
-              </motion.p>
+              </p>
             )}
 
             {/* Social Proof İstatistikler */}
             {socialProof && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="flex flex-col items-center gap-4"
-              >
+              <div className="flex flex-col items-center gap-4">
                 <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)" }}>
                   {socialProof.text}
                 </p>
@@ -273,18 +248,15 @@ export function PulseFitHero({
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
-          </motion.div>
+          </div>
         </div>
       )}
 
       {/* Program Kartları Carousel */}
       {programs.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
+        <div
           className="relative z-10 w-full overflow-hidden"
           style={{ paddingTop: "40px", paddingBottom: "60px" }}
         >
@@ -375,7 +347,7 @@ export function PulseFitHero({
               </motion.a>
             ))}
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </section>
   );
