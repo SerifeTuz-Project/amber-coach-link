@@ -33,7 +33,7 @@
   --color-gold-bright: var(--gold-bright);
   --color-whatsapp: var(--whatsapp);
 
-  --font-display: "Bebas Neue", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -82,7 +82,9 @@
 
 @utility font-display {
   font-family: var(--font-display);
-  letter-spacing: 0.01em;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
 }
 
 @utility eyebrow {
