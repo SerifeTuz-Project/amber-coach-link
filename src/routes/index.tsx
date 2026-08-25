@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import React from "react";
 import { PulseFitHero } from "@/components/ui/pulse-fit-hero";
 
 const WA_URL =
@@ -137,6 +138,93 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+function TestimonialForm() {
+  const [rating, setRating] = React.useState(5);
+  const [submitted, setSubmitted] = React.useState(false);
+
+  if (submitted) {
+    return (
+      <div className="flex flex-col items-start gap-3 py-4">
+        <div className="text-gold text-2xl">✓</div>
+        <p className="text-white font-medium">Yorumun için teşekkürler!</p>
+        <p className="text-muted-foreground text-sm">İnceledikten sonra sayfaya ekleyeceğim.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      name="testimonial"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const data = new FormData(form);
+        fetch("/", { method: "POST", body: data })
+          .then(() => setSubmitted(true))
+          .catch(() => setSubmitted(true));
+      }}
+      className="flex flex-col gap-5"
+    >
+      <input type="hidden" name="form-name" value="testimonial" />
+      <input type="hidden" name="rating" value={String(rating)} />
+      <p className="hidden">
+        <label>Bunu doldurmayın: <input name="bot-field" /></label>
+      </p>
+
+      {/* Ad */}
+      <div className="flex flex-col gap-1.5">
+        <label className="eyebrow text-muted-foreground text-xs">Adın</label>
+        <input
+          name="name"
+          required
+          placeholder="Adın Soyadın"
+          className="bg-background border border-border text-white placeholder:text-muted-foreground px-4 py-3 text-sm focus:outline-none focus:border-gold transition-colors"
+        />
+      </div>
+
+      {/* Puan */}
+      <div className="flex flex-col gap-1.5">
+        <label className="eyebrow text-muted-foreground text-xs">Puan</label>
+        <div className="flex gap-1">
+          {[1, 2, 3, 4, 5].map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => setRating(s)}
+              className="text-2xl transition-transform hover:scale-110"
+              style={{ color: s <= rating ? "#F5C842" : "rgba(255,255,255,0.2)" }}
+            >
+              ★
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Yorum */}
+      <div className="flex flex-col gap-1.5">
+        <label className="eyebrow text-muted-foreground text-xs">Yorumun</label>
+        <textarea
+          name="message"
+          required
+          rows={4}
+          placeholder="Birlikte çalışma deneyimini anlat..."
+          className="bg-background border border-border text-white placeholder:text-muted-foreground px-4 py-3 text-sm focus:outline-none focus:border-gold transition-colors resize-none"
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="btn-gold self-start"
+      >
+        Yorumu Gönder →
+      </button>
+    </form>
+  );
+}
 
 function WhatsAppIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
@@ -472,6 +560,18 @@ function Index() {
               <figcaption className="mt-5 eyebrow text-muted-foreground">— {t.name}</figcaption>
             </figure>
           ))}
+        </div>
+
+        {/* Yorum Formu */}
+        <div className="mt-14 border border-border bg-card p-8 md:p-10 max-w-2xl">
+          <div className="eyebrow text-gold mb-3">Deneyimini Paylaş</div>
+          <h3 className="font-display text-2xl md:text-3xl text-white mb-2">
+            Sen de Yorum Bırak
+          </h3>
+          <p className="text-muted-foreground text-sm mb-8">
+            Birlikte çalıştıysak deneyimini paylaşmana sevinirim.
+          </p>
+          <TestimonialForm />
         </div>
       </Section>
 
