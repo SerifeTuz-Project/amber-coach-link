@@ -155,25 +155,17 @@ function TestimonialForm() {
 
   return (
     <form
-      name="testimonial"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={(e) => {
         e.preventDefault();
         const form = e.currentTarget;
         const data = new FormData(form);
-        fetch("/", { method: "POST", body: data })
+        fetch("https://formspree.io/f/mzepndba", { method: "POST", body: data, headers: { Accept: "application/json" } })
           .then(() => setSubmitted(true))
           .catch(() => setSubmitted(true));
       }}
       className="flex flex-col gap-5"
     >
-      <input type="hidden" name="form-name" value="testimonial" />
       <input type="hidden" name="rating" value={String(rating)} />
-      <p className="hidden">
-        <label>Bunu doldurmayın: <input name="bot-field" /></label>
-      </p>
 
       {/* Ad */}
       <div className="flex flex-col gap-1.5">
