@@ -157,6 +157,44 @@ export function PulseFitHero({
       ) : (
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-5 md:px-8 py-16">
           <div className="flex flex-col items-center text-center max-w-5xl gap-8">
+            {/* Lamp ışık efekti */}
+            <div className="relative flex w-full justify-center overflow-hidden" style={{ height: "80px", marginBottom: "-48px" }}>
+              <motion.div
+                initial={{ opacity: 0.3, width: "8rem" }}
+                whileInView={{ opacity: 1, width: "20rem" }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeInOut" }}
+                style={{
+                  backgroundImage: `conic-gradient(from 70deg at center top, var(--tw-gradient-stops))`,
+                }}
+                className="absolute right-1/2 h-40 overflow-visible bg-gradient-conic from-slate-300 via-transparent to-transparent"
+              >
+                <div className="absolute w-full left-0 h-full bottom-0 [mask-image:linear-gradient(to_right,white,transparent)]" style={{ background: "rgba(10,10,10,0.01)" }} />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0.3, width: "8rem" }}
+                whileInView={{ opacity: 1, width: "20rem" }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeInOut" }}
+                style={{
+                  backgroundImage: `conic-gradient(from 290deg at center top, var(--tw-gradient-stops))`,
+                }}
+                className="absolute left-1/2 h-40 overflow-visible bg-gradient-conic from-transparent via-transparent to-slate-300"
+              >
+                <div className="absolute w-full right-0 h-full bottom-0 [mask-image:linear-gradient(to_left,white,transparent)]" style={{ background: "rgba(10,10,10,0.01)" }} />
+              </motion.div>
+              <motion.div
+                initial={{ width: "6rem", opacity: 0 }}
+                whileInView={{ width: "18rem", opacity: 1 }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeInOut" }}
+                className="absolute bottom-0 h-px bg-slate-300/70"
+              />
+              <motion.div
+                initial={{ width: "4rem", opacity: 0 }}
+                whileInView={{ width: "10rem", opacity: 0.5 }}
+                transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
+                className="absolute bottom-4 h-8 rounded-full blur-xl bg-slate-300"
+              />
+            </div>
+
             {/* Eyebrow */}
             <div
               className="eyebrow"
