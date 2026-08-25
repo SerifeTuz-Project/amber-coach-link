@@ -67,18 +67,25 @@ export function PulseFitHero({
         "relative w-full min-h-screen flex flex-col overflow-hidden",
         className
       )}
-      style={{
-        background: "linear-gradient(180deg, #0A0A0A 0%, #111111 60%, #0A0A0A 100%)",
-      }}
+      style={{ backgroundColor: "#0A0A0A" }}
       role="banner"
       aria-label="Hero bölümü"
     >
-      {/* Altın ışıltı — sol üst */}
+      {/* Arka plan fotoğrafı */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
-          background:
-            "radial-gradient(ellipse at 15% 25%, rgba(212,160,23,0.18), transparent 55%)",
+          backgroundImage: "url('/ambitious-studio-rick-barrett-w7jYaN7GqyA-unsplash.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      {/* Karartma katmanı */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.28) 40%, rgba(0,0,0,0.65) 100%)",
         }}
       />
 
