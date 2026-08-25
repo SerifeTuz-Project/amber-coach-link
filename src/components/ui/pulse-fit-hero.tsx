@@ -67,18 +67,52 @@ export function PulseFitHero({
         "relative w-full min-h-screen flex flex-col overflow-hidden",
         className
       )}
-      style={{
-        background: "linear-gradient(180deg, #0A0A0A 0%, #111111 60%, #0A0A0A 100%)",
-      }}
       role="banner"
       aria-label="Hero bölümü"
     >
-      {/* Altın ışıltı — sol üst */}
+      {/* Arka plan fotoğrafı */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
-          background:
-            "radial-gradient(ellipse at 15% 25%, rgba(212,160,23,0.18), transparent 55%)",
+          backgroundImage: "url('/backgroundimage.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      {/* Karartma katmanı — yazıları okunaklı yapar */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          background: "linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%)",
+        }}
+      />
+      {/* LED tavan şeridi animasyonu */}
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          top: "8%",
+          left: "10%",
+          right: "10%",
+          height: "3px",
+          background: "linear-gradient(90deg, transparent 0%, rgba(255,100,20,0.9) 20%, rgba(255,140,40,1) 50%, rgba(255,100,20,0.9) 80%, transparent 100%)",
+          borderRadius: "2px",
+          animation: "ledGlow 3s ease-in-out infinite",
+          boxShadow: "0 0 18px 6px rgba(255,100,20,0.5), 0 0 40px 12px rgba(255,80,10,0.2)",
+        }}
+      />
+      {/* LED duvar şeridi (sağ) animasyonu */}
+      <div
+        className="pointer-events-none absolute z-10"
+        style={{
+          top: "28%",
+          right: "2%",
+          width: "3px",
+          height: "18%",
+          background: "linear-gradient(180deg, transparent 0%, rgba(255,100,20,0.9) 30%, rgba(255,140,40,1) 60%, rgba(255,100,20,0.9) 85%, transparent 100%)",
+          borderRadius: "2px",
+          animation: "ledGlow 3s ease-in-out infinite 0.5s",
+          boxShadow: "0 0 14px 5px rgba(255,100,20,0.4), 0 0 30px 10px rgba(255,80,10,0.15)",
         }}
       />
 
