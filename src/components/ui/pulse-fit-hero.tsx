@@ -284,7 +284,7 @@ export function PulseFitHero({
 
             {/* Disclaimer */}
             {disclaimer && (
-              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", fontStyle: "italic" }}>
+              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.8)", fontStyle: "italic", fontWeight: 500 }}>
                 {disclaimer}
               </p>
             )}
@@ -292,7 +292,7 @@ export function PulseFitHero({
             {/* Social Proof İstatistikler */}
             {socialProof && (
               <div className="flex flex-col items-center gap-4">
-                <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.5)" }}>
+                <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.85)", fontWeight: 500, letterSpacing: "0.04em" }}>
                   {socialProof.text}
                 </p>
                 <div className="flex gap-8">
@@ -304,7 +304,7 @@ export function PulseFitHero({
                       >
                         {s.value}
                       </div>
-                      <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.5)", marginTop: "4px", letterSpacing: "0.1em" }}>
+                      <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.85)", marginTop: "4px", letterSpacing: "0.1em", fontWeight: 500 }}>
                         {s.label}
                       </div>
                     </div>
