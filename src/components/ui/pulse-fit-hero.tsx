@@ -67,66 +67,18 @@ export function PulseFitHero({
         "relative w-full min-h-screen flex flex-col overflow-hidden",
         className
       )}
-      style={{ backgroundColor: "#0A0A0A" }}
+      style={{
+        background: "linear-gradient(180deg, #0A0A0A 0%, #111111 60%, #0A0A0A 100%)",
+      }}
       role="banner"
       aria-label="Hero bölümü"
     >
-      {/* Arka plan fotoğrafı */}
+      {/* Altın ışıltı — sol üst */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/backgroundimage.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center 60%",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
-      {/* Karartma katmanı */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0"
-        style={{
-          background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.6) 100%)",
-        }}
-      />
-      {/* LED tavan şeridi animasyonu */}
-      <div
-        className="pointer-events-none absolute z-10"
-        style={{
-          top: "6%",
-          left: "8%",
-          right: "8%",
-          height: "2px",
-          background: "linear-gradient(90deg, transparent 0%, rgba(255,90,10,0.8) 15%, rgba(255,130,30,1) 50%, rgba(255,90,10,0.8) 85%, transparent 100%)",
-          borderRadius: "2px",
-          animation: "ledGlow 3s ease-in-out infinite",
-          boxShadow: "0 0 16px 8px rgba(255,90,10,0.45), 0 0 36px 14px rgba(255,70,0,0.18)",
-        }}
-      />
-      {/* LED ikinci tavan şeridi */}
-      <div
-        className="pointer-events-none absolute z-10"
-        style={{
-          top: "11%",
-          left: "12%",
-          right: "12%",
-          height: "2px",
-          background: "linear-gradient(90deg, transparent 0%, rgba(255,90,10,0.6) 15%, rgba(255,130,30,0.85) 50%, rgba(255,90,10,0.6) 85%, transparent 100%)",
-          borderRadius: "2px",
-          animation: "ledGlow 3s ease-in-out infinite 0.3s",
-          boxShadow: "0 0 12px 6px rgba(255,90,10,0.3), 0 0 28px 10px rgba(255,70,0,0.12)",
-        }}
-      />
-      {/* LED duvar şeridi (sağ) */}
-      <div
-        className="pointer-events-none absolute z-10"
-        style={{
-          top: "14%",
-          bottom: "0",
-          right: "0%",
-          width: "2px",
-          background: "linear-gradient(180deg, rgba(255,100,20,0.8) 0%, rgba(255,140,40,0.5) 40%, transparent 100%)",
-          animation: "ledGlow 3s ease-in-out infinite 0.6s",
-          boxShadow: "0 0 12px 5px rgba(255,90,10,0.35)",
+          background:
+            "radial-gradient(ellipse at 15% 25%, rgba(212,160,23,0.18), transparent 55%)",
         }}
       />
 
